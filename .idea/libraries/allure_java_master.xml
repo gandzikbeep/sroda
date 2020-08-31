@@ -1,0 +1,65 @@
+<component name="libraryTable">
+  <library name="allure-java-master">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../allure-java-master" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-assertj/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-assertj/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-attachments/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-attachments/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-citrus/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-citrus/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber-jvm/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber-jvm/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber2-jvm/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber2-jvm/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber3-jvm/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber3-jvm/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber4-jvm/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber4-jvm/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber5-jvm/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-cucumber5-jvm/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-descriptions-javadoc/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-descriptions-javadoc/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-httpclient/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-httpclient/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-java-commons-test/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-java-commons/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-java-commons/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-java-migration/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-java-migration/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-jax-rs/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-jax-rs/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-jbehave/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-jbehave/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-jsonunit/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-jsonunit/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit-platform/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit-platform/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit4-aspect/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit4/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit4/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit5-assert/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit5-assert/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit5/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-junit5/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-model/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-okhttp3/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-okhttp3/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-okhttp/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-okhttp/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-rest-assured/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-rest-assured/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-selenide/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-selenide/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-servlet-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-spock/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-spock/src/test/groovy" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-spring-web/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-spring-web/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-testng/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../allure-java-master/allure-testng/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
