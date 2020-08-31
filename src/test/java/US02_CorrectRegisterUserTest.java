@@ -1,11 +1,18 @@
 import Pages.CreateAccountFormPage;
+import Pages.HomePage;
 import Pages.LoginPage;
+import Pages.WelcomePage;
+import com.github.javafaker.Faker;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class US02_CorrectRegisterUserTest {
@@ -16,8 +23,8 @@ public class US02_CorrectRegisterUserTest {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
-        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation");
-
+        driver.manage().window().maximize();
+        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     }
 
     @Test
@@ -26,73 +33,81 @@ public class US02_CorrectRegisterUserTest {
 
         CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
 
+// ZMIANA PODCZAS KAZDEGO TESTU -> TRZEBA FAKE GENERATOR ZROBIC
+        String correctusername2 = "12345773l@lp.pl";
 
-        String correctUsername2 = "c22123orrectUsername@pl.pl";
         String correctFirstName = "Tomasz";
         String correctLastName = "Kowalski";
-        //String correctUsername = "co34rrectUsername@pl.pl";
         String correctPassword = "1234567";
         String correctDay = "4";
         String correctMonth = "4";
-        String correctYear = "1988";
+        String correctYear = "1990";
         String correctAddress1 = "adres1";
         String correctAddress2 = "adress22";
         String city = "New York";
-        String state = "New York";
-        String country = "United States";
+        String state = "32";
+        String country = "21";
         String zipcode = "10100";
         String addInfo = "jakies info";
         String homePhone = "918918";
-        String mobilePhone = "54545454";
+        String mobilePhone = "9189189187";
         String alias = "jakisAlias";
-        //boolean setGenderAsMale = false;
+        boolean setGenderAsMale = false;
 
-//        HomePage homePage = new HomePage(driver);
-//        homePage.goToLoginPage();
+        WelcomePage welcomePage = new WelcomePage(driver);
+
+        HomePage homePage = new HomePage(driver);
+        homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setEmailCreateInput(correctUsername2);
+        loginPage.setEmailCreateInput(correctusername2);
         loginPage.goToCreateAccountFormPage();
 
-
         Thread.sleep(3000);
-      // createAccountFormPage.setGender(setGenderAsMale);
+        createAccountFormPage.setGender(setGenderAsMale);
         createAccountFormPage.enterFirstName(correctFirstName);
         createAccountFormPage.enterLastName(correctLastName);
         Thread.sleep(3000);
 
-
-        createAccountFormPage.enterEmailLogin(correctUsername2);
+        createAccountFormPage.enterEmailLogin(correctusername2);
         createAccountFormPage.setPassword(correctPassword);
         Thread.sleep(3000);
-
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript(("window.scrollBy(0,250)"));
         createAccountFormPage.setDayOfBirth(correctDay);
         createAccountFormPage.setMonthOfBirth(correctMonth);
-        createAccountFormPage.userSelectYearOfBirth(correctYear);
-        //createAccountFormPage.setCheckCheckboxNews();
-       // createAccountFormPage.setCheckCheckboxSpecialOffers();
+        createAccountFormPage.setYearOfBirth(correctYear);
+        js.executeScript(("window.scrollBy(0,250)"));
+        Thread.sleep(3000);
+
+        createAccountFormPage.setCheckCheckboxNews();
+        createAccountFormPage.setCheckCheckboxSpecialOffers();
+
         createAccountFormPage.setAddressLine1(correctAddress1);
         createAccountFormPage.setAddressLine2(correctAddress2);
+
         createAccountFormPage.setCity(city);
+        createAccountFormPage.setCountry(country);
         createAccountFormPage.setState(state);
         createAccountFormPage.setZipCode(zipcode);
-        createAccountFormPage.setCountry(country);
+        Thread.sleep(3000);
+
         createAccountFormPage.setAddInfo(addInfo);
         createAccountFormPage.setHomePhone(homePhone);
         createAccountFormPage.setMobilePhone(mobilePhone);
         createAccountFormPage.setAlias(alias);
+        Thread.sleep(3000);
         createAccountFormPage.setBtnSubmitAccount();
-
-//   c22123orrectUsername@pl.plc22123orrectUsername@pl.pl
+        Thread.sleep(3000);
+        welcomePage.getWelcomeTxt();
+//        welcomePage.setLogout();
+//        Thread.sleep(2000);
 //
 //ASERCJE
 
-
-
-
-//        WelcomePage welcomePage = new WelcomePage(driver);
-//        Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
-//        Assert.assertTrue(welcomePage.getLoggedUser());
-//        Assert.assertTrue(welcomePage.logout());
+        //Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here "));
+        Assert.assertTrue(welcomePage.getLoggedUser());
+        Assert.assertTrue(welcomePage.isLogoutButtonVisible());
+        Assert.assertTrue(homePage.isSignInButtonIsVisible());
 
     }
 

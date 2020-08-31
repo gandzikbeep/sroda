@@ -45,7 +45,10 @@ public class HomePage {
     public boolean checkSliderContener() {
         return sliderContener.isDisplayed();
     }
+
     public Object goToLoginPage() {
         return LoginPage;
     }
+
+    public boolean isSignInButtonIsVisible() {return signIn.isDisplayed(); }
 }

@@ -52,8 +52,8 @@ public class CreateAccountFormPage {
         monthSelect.selectByValue(correctMonth);
     }
 
-    public void userSelectYearOfBirth(String correctYear) {      //dropdown
-        Select yearSelect = new Select(drpDateOfBirthMonths);
+    public void setYearOfBirth(String correctYear) {      //dropdown
+        Select yearSelect = new Select(drpDateOfBirthYears);
         yearSelect.selectByValue(correctYear);
     }
 
@@ -105,6 +105,7 @@ public class CreateAccountFormPage {
     }
 
     public void setAlias(String alias1) {
+        alias.clear();
         alias.sendKeys(alias1);
     }
 
@@ -155,7 +156,7 @@ public class CreateAccountFormPage {
     WebElement homePhone;
     @FindBy(id = "phone_mobile")
     WebElement mobilePhone;
-    @FindBy(id = "aliase")
+    @FindBy(id = "alias")
     WebElement alias;
     @FindBy(id = "submitAccount")
     WebElement btnSubmitAccount;

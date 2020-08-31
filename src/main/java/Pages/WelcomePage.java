@@ -13,14 +13,14 @@ public class WelcomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[contains(text(),'Welcome to your ')]")
+    @FindBy(xpath = "//*[contains(text(),'Welcome to your account. Here you can manage all of your personal information and orders.')]")
     WebElement welcomeText;
 
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]//a")
     WebElement loggedUser;
 
-    @FindBy(xpath = "//*[@title=\"Log me out\"]")
+    @FindBy(xpath = "//a[@href='http://automationpractice.com/index.php?mylogout=']")   //(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
     WebElement logoutButton;
 
 
@@ -36,6 +36,11 @@ public class WelcomePage {
     //czy jest button Logout?:
     public boolean isLogoutButtonVisible() {
         return logoutButton.isDisplayed();
+    }
+
+    public void setLogout(){
+        logoutButton.click();
+
     }
 
 }

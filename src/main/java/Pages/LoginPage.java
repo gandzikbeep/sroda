@@ -30,6 +30,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id=\"SubmitCreate\"]")
     WebElement submitCreateBtn;
 
+    @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
+    WebElement getSignInButton;
+
     public void setEmailCreateInput(String correctUsername2) {
         emailCreateInput.sendKeys(correctUsername2);
     }
@@ -49,6 +52,12 @@ public class LoginPage {
     }
 
     public void goToCreateAccountFormPage() {submitCreateBtn.click();}
+
+    //
+    public boolean  IsSignInButtonIsVisibleOnLoginPage() {
+        getSignInButton.isDisplayed();
+        return true;
+           }
 
 //    public void enterUsernameEmailCreate(String emailLogin) {
 //        emailCreateInput.sendKeys(emailLogin);
