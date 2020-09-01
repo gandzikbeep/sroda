@@ -9,6 +9,7 @@ public class HomePage {
 
     private final WebDriver driver;
     private Object LoginPage;
+    private Object WomenTab;
 
     //konst
     public HomePage(WebDriver driver) {
@@ -29,6 +30,13 @@ public class HomePage {
     WebElement bestSellersTab;
     @FindBy(xpath = "//*[@id=\"slider_row\"]")
     WebElement sliderContener;
+    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
+    WebElement womenTab;
+
+
+ public void goToWomenTab() {
+     womenTab.click();
+ }
 
     public boolean checkLogo() {
         return yourLogo.isDisplayed();
@@ -51,4 +59,6 @@ public class HomePage {
     }
 
     public boolean isSignInButtonIsVisible() {return signIn.isDisplayed(); }
+
+    public void goToSignInButton() {signIn.click();}
 }

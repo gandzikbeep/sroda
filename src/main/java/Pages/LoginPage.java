@@ -14,6 +14,7 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    private DataFaker faker = new DataFaker();
 
     @FindBy(xpath = "//*[@id='email']")
     WebElement emailInput;
@@ -33,10 +34,12 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
     WebElement getSignInButton;
 
-    public void setEmailCreateInput(String correctUsername2) {
-        emailCreateInput.sendKeys(correctUsername2);
-    }
+    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
+    WebElement womenTab;
 
+    public void setEmailCreateInput(String correctUsername2) {
+        emailCreateInput.sendKeys(faker.getFakeEmail());
+            }
 
 
     public void setEmailLogin(String emailLogin) {
@@ -67,6 +70,8 @@ public class LoginPage {
         submitCreateBtn.click();
     }
 
-
+    public void goToWomenTab() {
+        womenTab.click();
+    }
 
 }
