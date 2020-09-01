@@ -1,7 +1,3 @@
-//NIE DZIAŁA
-
-
-import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.WelcomePage;
 import org.junit.After;
@@ -13,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US05_CorrectLogout<correctUsername, correctPassword> {
+public class US06_LogInUser_TabNavigate {
     WebDriver driver;
     @Before
     public void setup() {
@@ -21,19 +17,14 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php");
+        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
     }
 
     @Test
-    //HomePage homePage = new HomePage(driver);
-  //  LoginPage loginPage = new LoginPage(driver);
-
-    public void correctLoginWithLogout() throws InterruptedException {
+    public void correctLogin() throws InterruptedException {
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
 
-        HomePage homePage = new HomePage(driver);
-        homePage.goToSignInButton();
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.setEmailLogin(correctUsername);
@@ -41,10 +32,10 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
         loginPage.login();
 
         WelcomePage welcomePage = new WelcomePage(driver);
-        Thread.sleep(200);
-        welcomePage.setLogout();
-
-        Assert.assertTrue(loginPage.IsSignInButtonIsVisibleOnLoginPage());
+        Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
+        Assert.assertTrue(welcomePage.getLoggedUser());
+        Assert.assertTrue(welcomePage.isLogoutButtonVisible());
+        Thread.sleep(2000);
 
     }
 
@@ -52,4 +43,5 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
     public void endTest(){
         driver.quit();
     }
+
 }
