@@ -12,13 +12,13 @@ public class Pay03_Address {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[@id=\"center_column\"]/form/p/button/span")
     WebElement proceedToCheckoutBtn;
 
-    public void setProceedToCheckoutBtn(){
+    public void setProceedToCheckoutBtn() {
         proceedToCheckoutBtn.click();
     }
-
 }
 
 

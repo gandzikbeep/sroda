@@ -12,19 +12,20 @@ public class Pay04_Shipping {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[@id=\"cgv\"]")
     WebElement checkboxIAgree;
 
     @FindBy(xpath = "//*[@id=\"form\"]/p/button/span")
     WebElement proceedToCheckoutBtn;
 
-    public void setCheckboxIAgree() {checkboxIAgree.click();}
-
-    public void setProceedToCheckoutBtn(){
-        proceedToCheckoutBtn.click();
+    public void setCheckboxIAgree() {
+        checkboxIAgree.click();
     }
 
-
+    public void setProceedToCheckoutBtn() {
+        proceedToCheckoutBtn.click();
+    }
 }
 
 

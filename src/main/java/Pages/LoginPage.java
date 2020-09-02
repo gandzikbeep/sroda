@@ -14,6 +14,7 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     private DataFaker faker = new DataFaker();
 
     @FindBy(xpath = "//*[@id='email']")
@@ -39,8 +40,7 @@ public class LoginPage {
 
     public void setEmailCreateInput(String correctUsername2) {
         emailCreateInput.sendKeys(faker.getFakeEmail());
-            }
-
+    }
 
     public void setEmailLogin(String emailLogin) {
         emailInput.sendKeys(emailLogin);
@@ -54,17 +54,14 @@ public class LoginPage {
         signInButton.click();
     }
 
-    public void goToCreateAccountFormPage() {submitCreateBtn.click();}
+    public void goToCreateAccountFormPage() {
+        submitCreateBtn.click();
+    }
 
-    //
-    public boolean  IsSignInButtonIsVisibleOnLoginPage() {
+    public boolean IsSignInButtonIsVisibleOnLoginPage() {
         getSignInButton.isDisplayed();
         return true;
-           }
-
-//    public void enterUsernameEmailCreate(String emailLogin) {
-//        emailCreateInput.sendKeys(emailLogin);
-//    }
+    }
 
     public void signIn() {
         submitCreateBtn.click();

@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class US05_CorrectLogout<correctUsername, correctPassword> {
     WebDriver driver;
+
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
@@ -26,7 +27,7 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
 
     @Test
     //HomePage homePage = new HomePage(driver);
-  //  LoginPage loginPage = new LoginPage(driver);
+    //  LoginPage loginPage = new LoginPage(driver);
 
     public void correctLoginWithLogout() throws InterruptedException {
         String correctUsername = "correctUsername@pl.pl";
@@ -49,7 +50,7 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
     }
 
     @After
-    public void endTest(){
+    public void endTest() {
         driver.quit();
     }
 }

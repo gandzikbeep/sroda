@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class US03_CheckLogoTest {
     WebDriver driver;
+
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
@@ -21,18 +22,17 @@ public class US03_CheckLogoTest {
     }
 
     @Test
-    public void checkLogo(){
+    public void checkLogo() {
 
         HomePage homePage = new HomePage(driver);
-
         homePage.checkLogo();
 
         Assert.assertTrue(homePage.checkLogo());
 
-
     }
+
     @After
-    public void endTest(){
+    public void endTest() {
         driver.quit();
     }
 

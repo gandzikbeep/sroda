@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class US07_LoggedUser_AddDressToChart {
     WebDriver driver;
+
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
@@ -20,31 +21,22 @@ public class US07_LoggedUser_AddDressToChart {
     }
 
     @Test
-    public void addDresstoChartandPayByWire()  {
-        String correctUsername = "anna@test.pl";
-        String correctPassword = "111111";
-        boolean isVisibleCompleteOrderSection = true;
+    public void addDressToChartandPayByWire() {
 
-        LoginPage loginPage = new LoginPage(driver);
+        login();
 
-        loginPage.setEmailLogin(correctUsername);
-        loginPage.setPassword(correctPassword);
-        loginPage.login();
+        selectDress();
 
-        WelcomePage welcomePage = new WelcomePage(driver);
-        welcomePage.goToWomenTab();
+        Pay05_Payment_BankWire_Complete pay05_payment_bankWire_complete = getPay05_payment_bankWire_complete();
 
-        WomenTab womenTab = new WomenTab(driver);
-        womenTab.setDressesSubCat();
+        Assert.assertTrue(pay05_payment_bankWire_complete.isVisibleCompleteOrderSection());
 
-        Dresses_Cat dresses_cat = new Dresses_Cat(driver);
-        dresses_cat.setSummerDresses();
+        // Assert.assertEquals("ni sa takie same", );
 
-        Dresses_Cat_Summer dresses_cat_summer = new Dresses_Cat_Summer(driver);
-        dresses_cat_summer.setSecondDress();
-        dresses_cat_summer.setSecondDressAddToChart();
-        dresses_cat_summer.setProceedTocheckoutOnPopup();
+    }
 
+
+    private Pay05_Payment_BankWire_Complete getPay05_payment_bankWire_complete() {
         Pay01_Summary pay01_summary = new Pay01_Summary(driver);
         pay01_summary.setProceedToCheckoutBtn();
 
@@ -63,17 +55,40 @@ public class US07_LoggedUser_AddDressToChart {
 
         Pay05_Payment_BankWire_Complete pay05_payment_bankWire_complete = new Pay05_Payment_BankWire_Complete(driver);
         pay05_payment_bankWire_complete.isVisibleCompleteOrderSection();
-
-        Assert.assertTrue(pay05_payment_bankWire_complete.isVisibleCompleteOrderSection());
-
-//        Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
-//        Assert.assertTrue(welcomePage.getLoggedUser());
-//        Assert.assertTrue(welcomePage.isLogoutButtonVisible());
-//        Thread.sleep(2000);
-
+        pay05_payment_bankWire_complete.checkAmount();
+        return pay05_payment_bankWire_complete;
     }
+
+    private void selectDress() {
+        WelcomePage welcomePage = new WelcomePage(driver);
+        welcomePage.goToWomenTab();
+
+        WomenTab womenTab = new WomenTab(driver);
+        womenTab.setDressesSubCat();
+
+        Dresses_Cat dresses_cat = new Dresses_Cat(driver);
+        dresses_cat.setSummerDresses();
+
+        Dresses_Cat_Summer dresses_cat_summer = new Dresses_Cat_Summer(driver);
+        dresses_cat_summer.setSecondDress();
+        // dresses_cat_summer.setPriceSecondDress();  //cena drugiej sukienki
+        dresses_cat_summer.setSecondDressAddToChart();
+        dresses_cat_summer.setProceedTocheckoutOnPopup();
+    }
+
+    private void login() {
+        String correctUsername = "anna@test.pl";
+        String correctPassword = "111111";
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.setEmailLogin(correctUsername);
+        loginPage.setPassword(correctPassword);
+        loginPage.login();
+    }
+
     @After
-    public void endTest(){
+    public void endTest() {
         driver.quit();
     }
 

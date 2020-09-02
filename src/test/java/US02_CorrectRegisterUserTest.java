@@ -27,10 +27,6 @@ public class US02_CorrectRegisterUserTest {
     @Test
     public void correctRegister() throws InterruptedException {
 
-
-        CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
-
-
         String correctDay = "4";
         String correctMonth = "4";
         String correctYear = "1990";
@@ -56,16 +52,13 @@ public class US02_CorrectRegisterUserTest {
         loginPage.setEmailCreateInput(correctusername2);
         loginPage.goToCreateAccountFormPage();
 
-        Thread.sleep(3000);
+        CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
         createAccountFormPage.setGender(setGenderAsMale);
         createAccountFormPage.enterFirstName(faker.getFakeFirstName());
         createAccountFormPage.enterLastName(faker.getFakeLastName());
-        Thread.sleep(3000);
-
 
         createAccountFormPage.enterEmailLogin(correctusername2);
         createAccountFormPage.setPassword(faker.getFakePassword());
-        Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(("window.scrollBy(0,250)"));
         createAccountFormPage.setDayOfBirth(correctDay);
@@ -94,9 +87,7 @@ public class US02_CorrectRegisterUserTest {
         createAccountFormPage.setBtnSubmitAccount();
         Thread.sleep(3000);
         welcomePage.getWelcomeTxt();
-//        welcomePage.setLogout();
-//        Thread.sleep(2000);
-//
+
 //ASERCJE
 
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here "));

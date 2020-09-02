@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class US04_CheckElementsOnHomePage {
     WebDriver driver;
+
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
@@ -20,7 +21,7 @@ public class US04_CheckElementsOnHomePage {
     }
 
     @Test
-    public void checkElementPopular(){
+    public void checkElementPopular() {
 
         HomePage homePage = new HomePage(driver);
 
@@ -30,8 +31,9 @@ public class US04_CheckElementsOnHomePage {
         Assert.assertTrue(homePage.checkElementBestSellers());
 
     }
+
     @Test
-    public  void checkElementBestSeller(){
+    public void checkElementBestSeller() {
         HomePage homePage = new HomePage(driver);
 
         homePage.checkElementBestSellers();
@@ -39,17 +41,18 @@ public class US04_CheckElementsOnHomePage {
         Assert.assertTrue(homePage.checkElementBestSellers());
 
     }
-    @Test
-    public void checkSliderContener(){
-        HomePage homePage = new HomePage(driver);
 
+    @Test
+    public void checkSliderContener() {
+
+        HomePage homePage = new HomePage(driver);
         homePage.checkSliderContener();
 
         Assert.assertTrue(homePage.checkSliderContener());
     }
 
     @After
-    public void endTest(){
+    public void endTest() {
         driver.quit();
     }
 

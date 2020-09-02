@@ -25,11 +25,10 @@ public class US06_NavigateTest {
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         driver.manage().window().maximize();
         driver.get("http://automationpractice.com/index.php?controller=my-account");
-
     }
 
     @Test
-    public void testNavigateOrderHistoryTab()  {
+    public void testNavigateOrderHistoryTab() {
         //LOGOWANIE
         onlyCorrectLogin();
 
@@ -39,10 +38,10 @@ public class US06_NavigateTest {
         String expectedURL = "http://automationpractice.com/index.php?controller=history";
 
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
-
     }
+
     @Test
-    public void testNavigateCreditSlips()  {
+    public void testNavigateCreditSlips() {
         //LOGOWANIE
         onlyCorrectLogin();
 
@@ -53,6 +52,7 @@ public class US06_NavigateTest {
 
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
+
     @Test
     public void testNavigateToMyAddress() {
         onlyCorrectLogin();
@@ -61,6 +61,7 @@ public class US06_NavigateTest {
         String expectedURL = "http://automationpractice.com/index.php?controller=addresses";
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
+
     @Test
     public void testNavigateToMyPersonalInfo() {
         onlyCorrectLogin();
@@ -69,6 +70,7 @@ public class US06_NavigateTest {
         String expectedURL = "http://automationpractice.com/index.php?controller=identity";
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
+
     @Test
     public void testNavigateToWishlist() {
         onlyCorrectLogin();
@@ -78,7 +80,7 @@ public class US06_NavigateTest {
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
 
-//LOGOWANIE
+    //LOGOWANIE
     private void onlyCorrectLogin() {
         LoginPage loginPage = new LoginPage(driver);
         String correctUsername = "correctUsername@pl.pl";
@@ -88,9 +90,8 @@ public class US06_NavigateTest {
         loginPage.login();
     }
 
-
     @After
-    public void endTest(){
+    public void endTest() {
         driver.quit();
     }
 

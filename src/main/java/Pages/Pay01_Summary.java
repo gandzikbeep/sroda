@@ -18,8 +18,6 @@ public class Pay01_Summary {
     public void setProceedToCheckoutBtn(){
         proceedToCheckoutBtn.click();
     }
-
-
 }
 
 

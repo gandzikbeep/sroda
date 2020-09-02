@@ -16,7 +16,6 @@ public class WelcomePage {
     @FindBy(xpath = "//*[contains(text(),'Welcome to your account. Here you can manage all of your personal information and orders.')]")
     WebElement welcomeText;
 
-
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]//a")
     WebElement loggedUser;
 
@@ -44,6 +43,7 @@ public class WelcomePage {
     public void setLogout() {
         logoutButton.click();
     }
+
     public void goToWomenTab() {
         womenTab.click();
     }
@@ -57,7 +57,6 @@ public class WelcomePage {
 
     public void navigateWelcomePageToOrderHistory() {
         driver.navigate().to(getWelcomePageUrl);
-        // driver.navigate().to("http://automationpractice.com/index.php?controller=my-account");  //my account
         driver.navigate().to(getOderHistoryUrl);  //order history
         driver.navigate().refresh();
     }

@@ -20,5 +20,8 @@ public class DataFaker {
     public String getFakeEmail() {
         return faker.internet().emailAddress();
     }
-    public String getFakePassword() {return  faker.internet().password();}
+
+    public String getFakePassword() {
+        return faker.internet().password();
+    }
 }

@@ -12,19 +12,20 @@ public class Pay05_Payment {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a")
     WebElement payByBankWire;
 
     @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p/a")
     WebElement payByCheck;
 
-    public void setPayByBankWire() {payByBankWire.click();}
-
-    public void setPayByCheck(){
-        payByCheck.click();
+    public void setPayByBankWire() {
+        payByBankWire.click();
     }
 
-
+    public void setPayByCheck() {
+        payByCheck.click();
+    }
 }
 
 

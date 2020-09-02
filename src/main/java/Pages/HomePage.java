@@ -34,9 +34,9 @@ public class HomePage {
     WebElement womenTab;
 
 
- public void goToWomenTab() {
-     womenTab.click();
- }
+    public void goToWomenTab() {
+        womenTab.click();
+    }
 
     public boolean checkLogo() {
         return yourLogo.isDisplayed();
@@ -58,7 +58,11 @@ public class HomePage {
         return LoginPage;
     }
 
-    public boolean isSignInButtonIsVisible() {return signIn.isDisplayed(); }
+    public boolean isSignInButtonIsVisible() {
+        return signIn.isDisplayed();
+    }
 
-    public void goToSignInButton() {signIn.click();}
+    public void goToSignInButton() {
+        signIn.click();
+    }
 }

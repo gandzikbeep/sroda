@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class US01_CorrectLoginTest {
     WebDriver driver;
+
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
@@ -38,8 +39,9 @@ public class US01_CorrectLoginTest {
         Thread.sleep(2000);
 
     }
+
     @After
-    public void endTest(){
+    public void endTest() {
         driver.quit();
     }
 
