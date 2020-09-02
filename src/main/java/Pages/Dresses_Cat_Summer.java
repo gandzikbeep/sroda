@@ -12,27 +12,34 @@ public class Dresses_Cat_Summer {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]")
+    WebElement selectSecondDress;
 
-    @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[1]/div[1]/a/img")
-    WebElement casualDresses;
+    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span")
+    WebElement addToCart_secondDress;
 
-    @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[2]/div[1]/a/img")
-    WebElement eveningDresses;
+    @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]")
+    WebElement popup_successAddtoCart;
 
-    @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[3]/div[1]/a/img")
-    WebElement summerDresses;
+    @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")
+    WebElement proceedTocheckoutOnPopup;
 
-    public void setCasualDresses() {
-        casualDresses.click();
+    public void setSecondDress() {
+        selectSecondDress.click();
     }
 
-    public void setEveningDresses() {
-        eveningDresses.click();
+    public void setSecondDressAddToChart() {
+        addToCart_secondDress.click();
+    }
+    public void setProceedTocheckoutOnPopup() {
+        proceedTocheckoutOnPopup.click();
     }
 
-    public void setSummerDresses() {
-        summerDresses.click();
-    }
+
+
+
+
+
 
 }
 

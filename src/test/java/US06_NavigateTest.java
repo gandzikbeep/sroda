@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class US07_NavigateTest {
+public class US06_NavigateTest {
     WebDriver driver;
 //    private Object webdriver;
 //    TakesScreenshot scrShot =((TakesScreenshot)webdriver);
