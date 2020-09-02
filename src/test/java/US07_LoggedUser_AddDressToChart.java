@@ -20,7 +20,7 @@ public class US07_LoggedUser_AddDressToChart {
     }
 
     @Test
-    public void correctLogin()  {
+    public void addDresstoChartandPayByWire()  {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
         boolean isVisibleCompleteOrderSection = true;
