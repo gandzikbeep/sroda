@@ -19,12 +19,18 @@ public class Pay05_Payment {
     @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p/a")
     WebElement payByCheck;
 
+    @FindBy(xpath = "//*[@id=\"total_price\"]")
+    WebElement totalPrice;
+
     public void setPayByBankWire() {
         payByBankWire.click();
     }
 
     public void setPayByCheck() {
         payByCheck.click();
+    }
+    public void checkTotalPrice() {
+        totalPrice.getText();
     }
 }
 

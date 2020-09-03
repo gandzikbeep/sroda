@@ -3,6 +3,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -21,7 +22,7 @@ public class US07_LoggedUser_AddDressToChart {
     }
 
     @Test
-    public void addDressToChartandPayByWire() {
+    public void addDressToChartAndPayByWire() {
 
         login();
 
@@ -31,7 +32,7 @@ public class US07_LoggedUser_AddDressToChart {
 
         Assert.assertTrue(pay05_payment_bankWire_complete.isVisibleCompleteOrderSection());
 
-        // Assert.assertEquals("ni sa takie same", );
+        //Assert.assertEquals("Ceny nie sa takie same", driver.findElement(By.id("total_price")), driver.findElement(By.id("amount")));
 
     }
 
@@ -48,6 +49,7 @@ public class US07_LoggedUser_AddDressToChart {
         pay04_shipping.setProceedToCheckoutBtn();
 
         Pay05_Payment pay05_payment = new Pay05_Payment(driver);
+        pay05_payment.checkTotalPrice();
         pay05_payment.setPayByBankWire();
 
         Pay05_Payment_BankWire pay05_payment_bankWire = new Pay05_Payment_BankWire(driver);
@@ -55,7 +57,7 @@ public class US07_LoggedUser_AddDressToChart {
 
         Pay05_Payment_BankWire_Complete pay05_payment_bankWire_complete = new Pay05_Payment_BankWire_Complete(driver);
         pay05_payment_bankWire_complete.isVisibleCompleteOrderSection();
-        pay05_payment_bankWire_complete.checkAmount();
+       // pay05_payment_bankWire_complete.checkAmount();
         return pay05_payment_bankWire_complete;
     }
 

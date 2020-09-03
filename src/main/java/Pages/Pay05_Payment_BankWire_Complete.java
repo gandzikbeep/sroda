@@ -23,7 +23,7 @@ public class Pay05_Payment_BankWire_Complete {
     @FindBy(xpath = "//*[@id=\"center_column\"]/p/a")
     WebElement backToOrdersBtn;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div/span")
+    @FindBy(xpath = "//*[@id=\"amount\"]")
     WebElement amountPrice;
 
     public boolean isVisibleCompleteOrderSection() {
@@ -34,9 +34,9 @@ public class Pay05_Payment_BankWire_Complete {
         backToOrdersBtn.click();
     }
 
-    public void checkAmount() {
-        amountPrice.getText();
-    }
+//    public void checkAmount() {
+//        amountPrice.getText();
+//    }
 }
 
 

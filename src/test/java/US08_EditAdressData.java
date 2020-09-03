@@ -1,5 +1,4 @@
-import Pages.LoginPage;
-import Pages.WelcomePage;
+import Pages.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,9 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US01_CorrectLoginTest {
+public class US08_EditAdressData {
     WebDriver driver;
-
 
     @Before
     public void setup() {
@@ -23,22 +21,32 @@ public class US01_CorrectLoginTest {
     }
 
     @Test
-    public void correctLogin() throws InterruptedException {
-        String correctUsername = "correctUsername@pl.pl";
-        String correctPassword = "1234567";
+    public void editAddress() {
+
+        login();
+
+        WelcomePage welcomePage = new WelcomePage(driver);
+        welcomePage.navigateWelcomePageToMyAddress();
+//
+//
+
+
+    }
+    
+
+
+
+
+
+    private void login() {
+        String correctUsername = "anna@test.pl";
+        String correctPassword = "111111";
 
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.setEmailLogin(correctUsername);
         loginPage.setPassword(correctPassword);
         loginPage.login();
-
-        WelcomePage welcomePage = new WelcomePage(driver);
-        Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
-        Assert.assertTrue(welcomePage.getLoggedUser());
-        Assert.assertTrue(welcomePage.isLogoutButtonVisible());
-        Thread.sleep(2000);
-
     }
 
     @After
