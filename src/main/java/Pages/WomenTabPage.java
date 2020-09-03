@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WomenTab {
+public class WomenTabPage {
     WebDriver driver;
 
-    public WomenTab(WebDriver driver) {
+    public WomenTabPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

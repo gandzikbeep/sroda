@@ -39,7 +39,7 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
 
         loginPage.setEmailLogin(correctUsername);
         loginPage.setPassword(correctPassword);
-        loginPage.login();
+        loginPage.clickLoginBtn();
 
         WelcomePage welcomePage = new WelcomePage(driver);
         Thread.sleep(200);

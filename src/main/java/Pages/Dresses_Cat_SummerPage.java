@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
 
-public class Dresses_Cat_Summer {    // DO USUNIĘCIA
+public class Dresses_Cat_SummerPage {    // DO USUNIĘCIA
     public Label priceSecondDress;
     WebDriver driver;
 
-    public Dresses_Cat_Summer(WebDriver driver) {
+    public Dresses_Cat_SummerPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

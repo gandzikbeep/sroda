@@ -4,12 +4,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class US06_NavigateTest {
@@ -87,7 +84,7 @@ public class US06_NavigateTest {
         String correctPassword = "1234567";
         loginPage.setEmailLogin(correctUsername);
         loginPage.setPassword(correctPassword);
-        loginPage.login();
+        loginPage.clickLoginBtn();
     }
 
     @After

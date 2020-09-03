@@ -1,5 +1,6 @@
 package Pages;
 
+import org.apache.http.util.Asserts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,56 +45,64 @@ public class MyAddress_Update {
     WebElement saveBtn;
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a/span")
     WebElement backBtn;
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[1]")
+    WebElement firstNameFromUpdate;
+
+    public String getTextFromFirstName() {
+        return firstNameFromUpdate.getText();
+    }
 
 
-    String newFirstName;
-    String newLastName;
-    String newCompany;
-    String newAddress1;
-    String newAddress2;
-    String newCity;
-    String newZipCode;
-    String newHomePhone;
-    String newMobilePhone;
-    String newAddInfo;
-    String newAlias;
 
-    public void setFirstName() {
+//
+//    String newLastName;
+//    String newCompany;
+//    String newAddress1;
+//    String newAddress2;
+//    String newCity;
+//    String newZipCode;
+//    String newHomePhone;
+//    String newMobilePhone;
+//    String newAddInfo;
+//    String newAlias;
+
+    public void setFirstName(String newFirstName) {
         firstName.clear();
         firstName.sendKeys(newFirstName);
     }
 
-    public void setLastName() {
+    public void setLastName(String newLastName) {
         lastName.clear();
         lastName.sendKeys(newLastName);
     }
 
-    public void setCompany() {
+    public void setCompany(String newCompany) {
         company.clear();
         company.sendKeys(newCompany);
     }
 
-    public void setAddress1() {
+    public void setAddress1(String newAddress1) {
         address1.clear();
         address1.sendKeys(newAddress1);
     }
 
-    public void setAddress2() {
+    public void setAddress2(String newAddress2) {
         address2.clear();
         address2.sendKeys(newAddress2);
     }
 
-    public void setCity() {
+    public void setCity(String newCity) {
         city.clear();
         city.sendKeys(newCity);
     }
+
 
     public void setState(String newState) {
         Select drpState = new Select(state);
         drpState.selectByValue(newState);
     }
 
-    public void setZipCode() {
+    public void setZipCode(String newZipCode) {
         zipCode.clear();
         zipCode.sendKeys(newZipCode);
     }
@@ -103,22 +112,22 @@ public class MyAddress_Update {
         drpCountry.selectByVisibleText(newCountry);
     }
 
-    public void setHomePhone() {
+    public void setHomePhone(String newHomePhone) {
         homePhone.clear();
         homePhone.sendKeys(newHomePhone);
     }
 
-    public void setMobilePhone() {
+    public void setMobilePhone(String newMobilePhone) {
         mobilePhone.clear();
         mobilePhone.sendKeys(newMobilePhone);
     }
 
-    public void setAddInfo() {
+    public void setAddInfo(String newAddInfo) {
         addInfo.clear();
         addInfo.sendKeys(newAddInfo);
     }
 
-    public void setAlias() {
+    public void setAlias(String newAlias) {
         alias.clear();
         alias.sendKeys(newAlias);
     }
@@ -130,6 +139,8 @@ public class MyAddress_Update {
     public void setBackBtn() {
         backBtn.click();
     }
+
+
 }
 
 

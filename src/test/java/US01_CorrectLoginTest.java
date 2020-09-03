@@ -31,7 +31,7 @@ public class US01_CorrectLoginTest {
 
         loginPage.setEmailLogin(correctUsername);
         loginPage.setPassword(correctPassword);
-        loginPage.login();
+        loginPage.clickLoginBtn();
 
         WelcomePage welcomePage = new WelcomePage(driver);
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));

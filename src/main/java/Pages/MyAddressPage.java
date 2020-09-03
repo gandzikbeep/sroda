@@ -5,13 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MyAddress {
+public class MyAddressPage {
     WebDriver driver;
 
-    public MyAddress(WebDriver driver) {
+    public MyAddressPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+//     DODAC dla pozniejszych testow:
+//     ADD A NEW ADDRESS
+//     BACK BUTON
+//     HOME BUTTON
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]")
     WebElement firstAndLastName;
@@ -33,11 +37,17 @@ public class MyAddress {
     WebElement homePhone;
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[8]/span")
     WebElement mobilePhone;
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]/span/text()")
+
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]/span")
     WebElement updateBtn;
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[2]/span")
     WebElement deleteBtn;
+    @FindBy(xpath = "//*[@id=\"center_column\"]/p")
+    WebElement textConfigure;
 
+    public boolean checkText() {
+        return textConfigure.isDisplayed();
+    }
 
     public void setFirstAndLastName() {
         firstAndLastName.getText();

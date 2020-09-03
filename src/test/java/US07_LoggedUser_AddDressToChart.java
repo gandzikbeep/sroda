@@ -3,7 +3,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -28,54 +27,54 @@ public class US07_LoggedUser_AddDressToChart {
 
         selectDress();
 
-        Pay05_Payment_BankWire_Complete pay05_payment_bankWire_complete = getPay05_payment_bankWire_complete();
+        Pay05_Payment_BankWire_CompletePage pay05_payment_bankWire_completePage = getPay05_payment_bankWire_complete();
 
-        Assert.assertTrue(pay05_payment_bankWire_complete.isVisibleCompleteOrderSection());
+        Assert.assertTrue(pay05_payment_bankWire_completePage.isVisibleCompleteOrderSection());
 
         //Assert.assertEquals("Ceny nie sa takie same", driver.findElement(By.id("total_price")), driver.findElement(By.id("amount")));
 
     }
 
 
-    private Pay05_Payment_BankWire_Complete getPay05_payment_bankWire_complete() {
-        Pay01_Summary pay01_summary = new Pay01_Summary(driver);
-        pay01_summary.setProceedToCheckoutBtn();
+    private Pay05_Payment_BankWire_CompletePage getPay05_payment_bankWire_complete() {
+        Pay01_SummaryPage pay01_summaryPage = new Pay01_SummaryPage(driver);
+        pay01_summaryPage.setProceedToCheckoutBtn();
 
-        Pay03_Address pay03_address = new Pay03_Address(driver);
-        pay03_address.setProceedToCheckoutBtn();
+        Pay03_AddressPage pay03_addressPage = new Pay03_AddressPage(driver);
+        pay03_addressPage.setProceedToCheckoutBtn();
 
-        Pay04_Shipping pay04_shipping = new Pay04_Shipping(driver);
-        pay04_shipping.setCheckboxIAgree();
-        pay04_shipping.setProceedToCheckoutBtn();
+        Pay04_ShippingPage pay04_shippingPage = new Pay04_ShippingPage(driver);
+        pay04_shippingPage.setCheckboxIAgree();
+        pay04_shippingPage.setProceedToCheckoutBtn();
 
-        Pay05_Payment pay05_payment = new Pay05_Payment(driver);
-        pay05_payment.checkTotalPrice();
-        pay05_payment.setPayByBankWire();
+        Pay05_PaymentPage pay05_paymentPage = new Pay05_PaymentPage(driver);
+        pay05_paymentPage.checkTotalPrice();
+        pay05_paymentPage.setPayByBankWire();
 
-        Pay05_Payment_BankWire pay05_payment_bankWire = new Pay05_Payment_BankWire(driver);
-        pay05_payment_bankWire.setConfirmBtn();
+        Pay05_Payment_BankWirePage pay05_payment_bankWirePage = new Pay05_Payment_BankWirePage(driver);
+        pay05_payment_bankWirePage.setConfirmBtn();
 
-        Pay05_Payment_BankWire_Complete pay05_payment_bankWire_complete = new Pay05_Payment_BankWire_Complete(driver);
-        pay05_payment_bankWire_complete.isVisibleCompleteOrderSection();
+        Pay05_Payment_BankWire_CompletePage pay05_payment_bankWire_completePage = new Pay05_Payment_BankWire_CompletePage(driver);
+        pay05_payment_bankWire_completePage.isVisibleCompleteOrderSection();
        // pay05_payment_bankWire_complete.checkAmount();
-        return pay05_payment_bankWire_complete;
+        return pay05_payment_bankWire_completePage;
     }
 
     private void selectDress() {
         WelcomePage welcomePage = new WelcomePage(driver);
         welcomePage.goToWomenTab();
 
-        WomenTab womenTab = new WomenTab(driver);
-        womenTab.setDressesSubCat();
+        WomenTabPage womenTabPage = new WomenTabPage(driver);
+        womenTabPage.setDressesSubCat();
 
-        Dresses_Cat dresses_cat = new Dresses_Cat(driver);
-        dresses_cat.setSummerDresses();
+        Dresses_CatPage dresses_catPage = new Dresses_CatPage(driver);
+        dresses_catPage.setSummerDresses();
 
-        Dresses_Cat_Summer dresses_cat_summer = new Dresses_Cat_Summer(driver);
-        dresses_cat_summer.setSecondDress();
+        Dresses_Cat_SummerPage dresses_cat_summerPage = new Dresses_Cat_SummerPage(driver);
+        dresses_cat_summerPage.setSecondDress();
         // dresses_cat_summer.setPriceSecondDress();  //cena drugiej sukienki
-        dresses_cat_summer.setSecondDressAddToChart();
-        dresses_cat_summer.setProceedTocheckoutOnPopup();
+        dresses_cat_summerPage.setSecondDressAddToChart();
+        dresses_cat_summerPage.setProceedTocheckoutOnPopup();
     }
 
     private void login() {
@@ -86,7 +85,7 @@ public class US07_LoggedUser_AddDressToChart {
 
         loginPage.setEmailLogin(correctUsername);
         loginPage.setPassword(correctPassword);
-        loginPage.login();
+        loginPage.clickLoginBtn();
     }
 
     @After

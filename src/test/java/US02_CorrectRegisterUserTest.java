@@ -1,5 +1,4 @@
 import Pages.*;
-import com.github.javafaker.Faker;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class US02_CorrectRegisterUserTest {
@@ -43,7 +41,7 @@ public class US02_CorrectRegisterUserTest {
         boolean setGenderAsMale = false;
         String correctusername2 = null;
 
-        DataFaker faker = new DataFaker();
+        DataFakerPage faker = new DataFakerPage();
         WelcomePage welcomePage = new WelcomePage(driver);
 
         HomePage homePage = new HomePage(driver);

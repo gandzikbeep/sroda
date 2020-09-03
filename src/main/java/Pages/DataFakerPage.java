@@ -2,10 +2,10 @@ package Pages;
 
 import com.github.javafaker.Faker;
 
-public class DataFaker {
+public class DataFakerPage {
     private Faker faker;
 
-    public DataFaker() {
+    public DataFakerPage() {
         faker = new Faker();
     }
 

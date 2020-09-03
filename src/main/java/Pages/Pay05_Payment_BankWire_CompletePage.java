@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.awt.*;
 
-public class Pay05_Payment_BankWire_Complete {
+public class Pay05_Payment_BankWire_CompletePage {
     //    public Label amountPrice;
     WebDriver driver;
 
-    public Pay05_Payment_BankWire_Complete(WebDriver driver) {
+    public Pay05_Payment_BankWire_CompletePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

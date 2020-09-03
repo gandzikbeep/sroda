@@ -15,7 +15,7 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    private DataFaker faker = new DataFaker();
+    private DataFakerPage faker = new DataFakerPage();
 
     @FindBy(xpath = "//*[@id='email']")
     WebElement emailInput;
@@ -50,7 +50,7 @@ public class LoginPage {
         passwordInput.sendKeys(password);
     }
 
-    public void login() {
+    public void clickLoginBtn() {
         signInButton.click();
     }
 
@@ -70,5 +70,6 @@ public class LoginPage {
     public void goToWomenTab() {
         womenTab.click();
     }
+
 
 }
