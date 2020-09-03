@@ -62,6 +62,45 @@ public class US08_EditAdressData {
         Assert.assertEquals(newZipCode, myAddressPage.setZipCode());
 
     }
+    @Test
+
+
+    public void editWithoutSaveAddress(){
+        WelcomePage welcomePage = new WelcomePage(driver);
+        MyAddressPage myAddressPage = new MyAddressPage(driver);
+        MyAddress_UpdatePage myAddress_updatePage = new MyAddress_UpdatePage(driver);
+        DataFakerPage faker = new DataFakerPage();
+
+        // dane testowe:
+        String newFirstName = faker.getFakeFirstName();
+        String newLastName = faker.getFakeLastName();
+        String newCompany = faker.getFakeCompany();
+        String newAddress1 = faker.getFakeAddress();
+        String newAddress2 = faker.getFakeNumber();
+        String newCity = faker.getFakeCity();
+        String newZipCode = faker.getFakeZipCode();
+        String newHomePhone = faker.getFakeHomeNumber();
+        String newMobilePhone = faker.getFakeMobilePhone();
+        String newAddInfo = faker.getFakeAddInfo();
+        String newAlias = "jakis_nowy";
+        String newState = "30";
+        String newCountry = "United States";
+
+        login();
+        welcomePage.navigateWelcomePageToMyAddress();
+        myAddressPage.setUpdateBtn();
+        myAddress_updatePage.fillAllForm(newFirstName, newLastName, newCompany, newAddress1, newAddress2,
+                newCity, newState, newZipCode, newCountry, newHomePhone,
+                newMobilePhone, newAddInfo, newAlias);
+        myAddress_updatePage.setBackBtn();
+
+        //ASERCJE
+        Assert.assertNotEquals("Name is incorrect",newFirstName, myAddressPage.getTextFromFirstName());
+
+
+    }
+
+
 
 
     private void login() {
