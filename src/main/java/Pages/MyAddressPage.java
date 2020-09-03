@@ -17,8 +17,10 @@ public class MyAddressPage {
 //     BACK BUTON
 //     HOME BUTTON
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]")
-    WebElement firstAndLastName;
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[1]")
+    WebElement firstName;
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[2]")
+    WebElement lastName;
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[3]/span")
     WebElement company;
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[4]/span[1]")
@@ -45,13 +47,26 @@ public class MyAddressPage {
     @FindBy(xpath = "//*[@id=\"center_column\"]/p")
     WebElement textConfigure;
 
-    public boolean checkText() {
+
+
+
+    public String getTextFromFirstName() {
+        return firstName.getText();
+    }
+
+    public boolean checkWelcomeText() {
         return textConfigure.isDisplayed();
     }
 
-    public void setFirstAndLastName() {
-        firstAndLastName.getText();
+    public String setCity() {
+       return city.getText();
     }
+// void zamineic na string!!!!!
+
+    public void setFirstName() {
+        firstName.getText();
+    }
+
     public void setCompany(){
         company.getText();
     }
@@ -63,16 +78,12 @@ public class MyAddressPage {
         address2.getText();
     }
 
-    public void setCity() {
-        city.getText();
-    }
-
     public void setState() {
         state.getText();
     }
 
-    public void setZipCode() {
-        zipCode.getText();
+    public String setZipCode() {
+       return zipCode.getText();
     }
 
     public void setCountry() {
