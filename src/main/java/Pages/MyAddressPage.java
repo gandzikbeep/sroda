@@ -49,13 +49,12 @@ public class MyAddressPage {
 
 
 
-
     public String getTextFromFirstName() {
         return firstName.getText();
     }
 
-    public boolean checkWelcomeText() {
-        return textConfigure.isDisplayed();
+    public String checkWelcomeText() {
+        return textConfigure.getText();
     }
 
     public String setCity() {

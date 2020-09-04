@@ -25,6 +25,13 @@ public class WelcomePage {
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
     WebElement womenTab;
 
+    @FindBy(xpath = "//*[@id=\"contact-link\"]/a")
+    WebElement contactUs;
+
+    public void getContactUs(){
+        contactUs.click();
+    }
+
 
     public String getWelcomeTxt() {
         return welcomeText.getText();
@@ -58,31 +65,26 @@ public class WelcomePage {
     public void navigateWelcomePageToOrderHistory() {
         driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getOderHistoryUrl);  //order history
-        driver.navigate().refresh();
     }
 
     public void navigateWelcomePageToMyCreditSlips() {
         driver.navigate().to(getWelcomePageUrl);  //my account
         driver.navigate().to(getCreditSlipsUrl);
-        driver.navigate().refresh();
     }
 
     public void navigateWelcomePageToMyAddress() {
         driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyAddressUrl);
-        driver.navigate().refresh();
     }
 
     public void navigateWelcomePageToMyPersonalInfo() {
         driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyPersonalInfoUrl);
-        driver.navigate().refresh();
     }
 
     public void navigateWelcomePageToMyWishlist() {
         driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyWishlistUrl);
-        driver.navigate().refresh();
     }
 }
 

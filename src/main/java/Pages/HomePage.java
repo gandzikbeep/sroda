@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
 
     private final WebDriver driver;
-    private Object LoginPage;
-    private Object WomenTab;
+   // private Object LoginPage;
+    //private Object WomenTab;
 
     //konst
     public HomePage(WebDriver driver) {
@@ -33,6 +33,10 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
     WebElement womenTab;
 
+public void setContactLink()
+{
+    contactLink.click();
+}
 
     public void goToWomenTab() {
         womenTab.click();
@@ -54,9 +58,9 @@ public class HomePage {
         return sliderContener.isDisplayed();
     }
 
-    public Object goToLoginPage() {
-        return LoginPage;
-    }
+//    public Object goToLoginPage() {
+//        return LoginPage;
+//    }
 
     public boolean isSignInButtonIsVisible() {
         return signIn.isDisplayed();

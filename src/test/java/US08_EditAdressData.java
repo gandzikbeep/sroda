@@ -50,22 +50,25 @@ public class US08_EditAdressData {
         welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
         myAddress_updatePage.fillAllForm(newFirstName, newLastName, newCompany, newAddress1, newAddress2,
-                 newCity, newState, newZipCode, newCountry, newHomePhone,
-                 newMobilePhone, newAddInfo, newAlias);
+                newCity, newState, newZipCode, newCountry, newHomePhone,
+                newMobilePhone, newAddInfo, newAlias);
         myAddress_updatePage.setSaveBtn();
-        myAddressPage.checkWelcomeText();
+        //myAddressPage.checkWelcomeText();
 
         //ASERCJE:
-        Assert.assertTrue("tekst nie jest Ok",myAddressPage.checkWelcomeText());
-        Assert.assertEquals("Name is incorrect",newFirstName, myAddressPage.getTextFromFirstName());
-        Assert.assertEquals("message", newCity +",", myAddressPage.setCity());
+        Assert.assertTrue(myAddressPage.checkWelcomeText().contains("Please configure your default billing and delivery addresses when placing an order. You may also add additional addresses, which can be useful for sending gifts or receiving an order at your office.")); // cos zmienic
+
+        // Assert.assertTrue(welcomePage.getWelcomeTxt().contains(""));
+        Assert.assertEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
+        Assert.assertEquals("message", newCity + ",", myAddressPage.setCity());
         Assert.assertEquals(newZipCode, myAddressPage.setZipCode());
 
     }
+
     @Test
 
 
-    public void editWithoutSaveAddress(){
+    public void editWithoutSaveAddress() {
         WelcomePage welcomePage = new WelcomePage(driver);
         MyAddressPage myAddressPage = new MyAddressPage(driver);
         MyAddress_UpdatePage myAddress_updatePage = new MyAddress_UpdatePage(driver);
@@ -95,13 +98,9 @@ public class US08_EditAdressData {
         myAddress_updatePage.setBackBtn();
 
         //ASERCJE
-        Assert.assertNotEquals("Name is incorrect",newFirstName, myAddressPage.getTextFromFirstName());
-
+        Assert.assertNotEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
 
     }
-
-
-
 
     private void login() {
         String correctUsername = "anna@test.pl";

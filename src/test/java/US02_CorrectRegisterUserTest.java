@@ -23,7 +23,7 @@ public class US02_CorrectRegisterUserTest {
     }
 
     @Test
-    public void correctRegister() throws InterruptedException {
+    public void correctRegister() {
 
         String correctDay = "4";
         String correctMonth = "4";
@@ -63,7 +63,7 @@ public class US02_CorrectRegisterUserTest {
         createAccountFormPage.setMonthOfBirth(correctMonth);
         createAccountFormPage.setYearOfBirth(correctYear);
         js.executeScript(("window.scrollBy(0,250)"));
-        Thread.sleep(3000);
+
 
         createAccountFormPage.setCheckCheckboxNews();
         createAccountFormPage.setCheckCheckboxSpecialOffers();
@@ -75,15 +75,15 @@ public class US02_CorrectRegisterUserTest {
         createAccountFormPage.setCountry(country);
         createAccountFormPage.setState(state);
         createAccountFormPage.setZipCode(zipcode);
-        Thread.sleep(3000);
+
 
         createAccountFormPage.setAddInfo(addInfo);
         createAccountFormPage.setHomePhone(homePhone);
         createAccountFormPage.setMobilePhone(mobilePhone);
         createAccountFormPage.setAlias(alias);
-        Thread.sleep(3000);
+
         createAccountFormPage.setBtnSubmitAccount();
-        Thread.sleep(3000);
+
         welcomePage.getWelcomeTxt();
 
 //ASERCJE
