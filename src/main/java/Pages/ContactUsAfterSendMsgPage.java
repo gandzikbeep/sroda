@@ -14,20 +14,18 @@ public class ContactUsAfterSendMsgPage {
         PageFactory.initElements(driver, this);
     }
 
-
-    @FindBy(xpath = "//*[contains(text(),'Your message has been successfully sent to our team.')]")     // stare "//*[@id=\"center_column\"]"
+    @FindBy(xpath = "//*[contains(text(),'Your message has been successfully sent to our team.')]")
     WebElement alertSuccessText;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a")
     WebElement homeBtn;
+
     @FindBy(xpath = "//*[@id=\"center_column\"]")
     WebElement alertSuccessSection;
 
-
-    public String getAlertSuccessText() {  // //*[@id="center_column"]/p
+    public String getAlertSuccessText() {
         return alertSuccessText.getText();
     }
-
 
     public boolean isAlertSuccessSectionIsDisplayed() {
         return alertSuccessSection.isDisplayed();
@@ -36,6 +34,5 @@ public class ContactUsAfterSendMsgPage {
     public void getHomeBtn() {
         homeBtn.click();
     }
-
 }
 

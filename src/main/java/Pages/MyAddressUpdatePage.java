@@ -16,47 +16,48 @@ public class MyAddressUpdatePage {
 
     @FindBy(xpath = "//*[@id=\"firstname\"]")
     WebElement firstName;
+
     @FindBy(xpath = "//*[@id=\"lastname\"]")
     WebElement lastName;
+
     @FindBy(xpath = "//*[@id=\"company\"]")
     WebElement company;
+
     @FindBy(xpath = "//*[@id=\"address1\"]")
     WebElement address1;
+
     @FindBy(xpath = "//*[@id=\"address2\"]")
     WebElement address2;
+
     @FindBy(xpath = "//*[@id=\"city\"]")
     WebElement city;
+
     @FindBy(xpath = "//*[@id=\"id_state\"]")
     WebElement state;
+
     @FindBy(xpath = "//*[@id=\"postcode\"]")
     WebElement zipCode;
+
     @FindBy(xpath = "//*[@id=\"id_country\"]")
     WebElement country;
+
     @FindBy(xpath = "//*[@id=\"phone\"]")
     WebElement homePhone;
+
     @FindBy(xpath = "//*[@id=\"phone_mobile\"]")
     WebElement mobilePhone;
+
     @FindBy(xpath = "//*[@id=\"other\"]")
     WebElement addInfo;
+
     @FindBy(xpath = "//*[@id=\"alias\"]")
     WebElement alias;
+
     @FindBy(xpath = "//*[@id=\"submitAddress\"]/span")
     WebElement saveBtn;
+
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a/span")
     WebElement backBtn;
-
-
-//
-//    String newLastName;
-//    String newCompany;
-//    String newAddress1;
-//    String newAddress2;
-//    String newCity;
-//    String newZipCode;
-//    String newHomePhone;
-//    String newMobilePhone;
-//    String newAddInfo;
-//    String newAlias;
 
     public void fillAllForm(String newFirstName, String newLastName, String newCompany, String newAddress1, String newAddress2,
                             String newCity, String newState, String newZipCode, String newCountry, String newHomePhone,
@@ -96,7 +97,6 @@ public class MyAddressUpdatePage {
     public void setBackBtn() {
         backBtn.click();
     }
-
 
     //----------//zrobienie jednej metody z wielu//-------------------------------------------------------//
 //    public void setFirstName(String newFirstName) {

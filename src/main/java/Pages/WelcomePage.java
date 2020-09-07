@@ -28,17 +28,23 @@ public class WelcomePage {
     @FindBy(xpath = "//*[@id=\"contact-link\"]/a")
     WebElement contactUs;
 
+    String getWelcomePageUrl = "http://automationpractice.com/index.php?controller=my-account";
+    String getOderHistoryUrl = "http://automationpractice.com/index.php?controller=history";
+    String getCreditSlipsUrl = "http://automationpractice.com/index.php?controller=order-slip";
+    String getMyAddressUrl = "http://automationpractice.com/index.php?controller=addresses";
+    String getMyPersonalInfoUrl = "http://automationpractice.com/index.php?controller=identity";
+    String getMyWishlistUrl = "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist";
+
     public void getContactUs(){
         contactUs.click();
     }
-
 
     public String getWelcomeTxt() {
         return welcomeText.getText();
     }
 
     //czy jest widoczna sekcja z imieniem usera
-    public boolean getLoggedUser() {
+    public boolean isLoggedUserIsVisibleSection() {
         return loggedUser.isDisplayed();
     }
 
@@ -55,35 +61,23 @@ public class WelcomePage {
         womenTab.click();
     }
 
-    String getWelcomePageUrl = "http://automationpractice.com/index.php?controller=my-account";
-    String getOderHistoryUrl = "http://automationpractice.com/index.php?controller=history";
-    String getCreditSlipsUrl = "http://automationpractice.com/index.php?controller=order-slip";
-    String getMyAddressUrl = "http://automationpractice.com/index.php?controller=addresses";
-    String getMyPersonalInfoUrl = "http://automationpractice.com/index.php?controller=identity";
-    String getMyWishlistUrl = "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist";
-
     public void navigateWelcomePageToOrderHistory() {
-        driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getOderHistoryUrl);  //order history
     }
 
     public void navigateWelcomePageToMyCreditSlips() {
-        driver.navigate().to(getWelcomePageUrl);  //my account
         driver.navigate().to(getCreditSlipsUrl);
     }
 
     public void navigateWelcomePageToMyAddress() {
-        //driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyAddressUrl);
     }
 
     public void navigateWelcomePageToMyPersonalInfo() {
-        driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyPersonalInfoUrl);
     }
 
     public void navigateWelcomePageToMyWishlist() {
-        driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyWishlistUrl);
     }
 }

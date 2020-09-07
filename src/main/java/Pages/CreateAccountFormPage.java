@@ -17,6 +17,71 @@ public class CreateAccountFormPage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(id = "id_gender1")
+    WebElement rdbGenderMale;
+
+    @FindBy(id = "id_gender2")
+    WebElement rdbGenderFemale;
+
+    @FindBy(id = "customer_firstname")
+    WebElement firstName;
+
+    @FindBy(id = "customer_lastname")
+    WebElement lastName;
+
+    @FindBy(id = "email")
+    WebElement emailInput;
+
+    @FindBy(id = "passwd")
+    WebElement createPassword;
+
+    @FindBy(id = "days")                        //dropdowny
+    WebElement drpDateOfBirthDays;
+
+    @FindBy(id = "months")
+    WebElement drpDateOfBirthMonths;
+
+    @FindBy(id = "years")
+    WebElement drpDateOfBirthYears;
+
+    @FindBy(id = "uniform-newsletter")             //checkboxy x 2
+    WebElement checkboxNews;
+
+    @FindBy(id = "optin")
+    WebElement checkBoxSpecialOffers;
+
+    @FindBy(id = "address1")
+    WebElement address1;
+
+    @FindBy(id = "address2")
+    WebElement address2;
+
+    @FindBy(id = "city")
+    WebElement city;
+
+    @FindBy(id = "id_state")
+    WebElement drpState;
+
+    @FindBy(id = "postcode")
+    WebElement zipCode;
+
+    @FindBy(id = "id_country")   ///drpCountry
+    WebElement drpCountry;
+
+    @FindBy(id = "other")
+    WebElement addInfo;
+
+    @FindBy(id = "phone")
+    WebElement homePhone;
+
+    @FindBy(id = "phone_mobile")
+    WebElement mobilePhone;
+
+    @FindBy(id = "alias")
+    WebElement alias;
+
+    @FindBy(id = "submitAccount")
+    WebElement btnSubmitAccount;
 
     public void setGender(boolean isMale) {
         if (isMale) {
@@ -75,7 +140,6 @@ public class CreateAccountFormPage {
 
     public void setCity(String cityName) {
         city.sendKeys(cityName);
-
     }
 
     public void setState(String state) {
@@ -112,56 +176,5 @@ public class CreateAccountFormPage {
     public void setBtnSubmitAccount() {
         btnSubmitAccount.click();
     }
-
-
-
-    @FindBy(id = "id_gender1")
-    WebElement rdbGenderMale;
-
-    @FindBy(id = "id_gender2")
-    WebElement rdbGenderFemale;
-    @FindBy(id = "customer_firstname")
-    WebElement firstName;
-    @FindBy(id = "customer_lastname")
-    WebElement lastName;
-    @FindBy(id = "email")
-    WebElement emailInput;
-    @FindBy(id = "passwd")
-    WebElement createPassword;
-    @FindBy(id = "days")                        //dropdowny
-    WebElement drpDateOfBirthDays;
-    @FindBy(id = "months")
-    WebElement drpDateOfBirthMonths;
-    @FindBy(id = "years")
-    WebElement drpDateOfBirthYears;
-    @FindBy(id = "uniform-newsletter")             //checkboxy x 2
-    WebElement checkboxNews;
-    @FindBy(id = "optin")
-    WebElement checkBoxSpecialOffers;
-    @FindBy(id = "address1")
-    WebElement address1;
-    @FindBy(id = "address2")
-    WebElement address2;
-    @FindBy(id = "city")
-    WebElement city;
-    @FindBy(id = "id_state")
-    WebElement drpState;
-    @FindBy(id = "postcode")
-    WebElement zipCode;
-    @FindBy(id = "id_country")   ///drpCountry
-    WebElement drpCountry;
-
-    @FindBy(id = "other")
-    WebElement addInfo;
-    @FindBy(id = "phone")
-    WebElement homePhone;
-    @FindBy(id = "phone_mobile")
-    WebElement mobilePhone;
-    @FindBy(id = "alias")
-    WebElement alias;
-    @FindBy(id = "submitAccount")
-    WebElement btnSubmitAccount;
-
-
 }
 

@@ -29,7 +29,6 @@ public class US08_EditAdressData {
         LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 
-
         // dane testowe:
         String newFirstName = faker.getFakeFirstName();
         String newLastName = faker.getFakeLastName();
@@ -48,16 +47,13 @@ public class US08_EditAdressData {
         String correctPassword = "111111";
 
         //TEST:
-
-        loginPage.logIn( correctUsername,  correctPassword);
+        loginPage.logIn(correctUsername, correctPassword);
         welcomePage.navigateWelcomePageToMyAddress();
-
         myAddressPage.setUpdateBtn();
         myAddress_updatePage.fillAllForm(newFirstName, newLastName, newCompany, newAddress1, newAddress2,
                 newCity, newState, newZipCode, newCountry, newHomePhone,
                 newMobilePhone, newAddInfo, newAlias);
         myAddress_updatePage.setSaveBtn();
-
 
         //ASERCJE:
         Assert.assertTrue(myAddressPage.checkWelcomeText().contains("Please configure your default billing and delivery addresses when placing an order. You may also add additional addresses, which can be useful for sending gifts or receiving an order at your office.")); // cos zmienic
@@ -68,7 +64,6 @@ public class US08_EditAdressData {
     }
 
     @Test
-
 
     public void editWithoutSaveAddress() {
 
@@ -95,9 +90,9 @@ public class US08_EditAdressData {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
-       //TEST
-        loginPage.logIn( correctUsername,  correctPassword);
-                welcomePage.navigateWelcomePageToMyAddress();
+        //TEST
+        loginPage.logIn(correctUsername, correctPassword);
+        welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
         myAddress_updatePage.fillAllForm(newFirstName, newLastName, newCompany, newAddress1, newAddress2,
                 newCity, newState, newZipCode, newCountry, newHomePhone,
@@ -108,10 +103,8 @@ public class US08_EditAdressData {
         Assert.assertNotEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
     }
 
-
     @After
     public void endTest() {
         driver.quit();
     }
-
 }

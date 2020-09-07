@@ -34,6 +34,7 @@ public class US04_CheckElementsOnHomePage {
 
     @Test
     public void checkElementBestSeller() {
+
         HomePage homePage = new HomePage(driver);
 
         homePage.checkElementBestSellers();
@@ -46,9 +47,9 @@ public class US04_CheckElementsOnHomePage {
     public void checkSliderContener() {
 
         HomePage homePage = new HomePage(driver);
-        homePage.checkSliderContener();
+        homePage.checkSliderContainer();
 
-        Assert.assertTrue(homePage.checkSliderContener());
+        Assert.assertTrue(homePage.checkSliderContainer());
     }
 
     @After

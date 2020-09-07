@@ -29,6 +29,7 @@ public class Pay05PaymentPage {
     public void setPayByCheck() {
         payByCheck.click();
     }
+
     public void checkTotalPrice() {
         totalPrice.getText();
     }

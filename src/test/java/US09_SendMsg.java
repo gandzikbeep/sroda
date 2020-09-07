@@ -22,50 +22,37 @@ public class US09_SendMsg {
 
     @Test
     public void sendMsgAsALoggedUser() throws InterruptedException {
+
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        WelcomePage welcomePage = new WelcomePage(driver);
+        ContactUsPage contactUsPage = new ContactUsPage(driver);
+        ContactUsAfterSendMsgPage contactUs_afterSendMsgPage = new ContactUsAfterSendMsgPage(driver);
+
         String email = "anna@test.pl";
         String password = "111111";
         String setSubject = "2";
         String msg = "jakas wiadomosc";
-        boolean isAlertSuccessSection = true;
+        String expected = "Your message has been successfully sent to our team.";
 
-        HomePage homePage = new HomePage(driver);
         homePage.goToSignInButton();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.setEmailLogin(email);
-        loginPage.setPassword(password);
-        loginPage.clickLoginBtn();
-        WelcomePage welcomePage = new WelcomePage(driver);
+        loginPage.logIn(email, password);
         welcomePage.getContactUs();
-        ContactUsPage contactUsPage = new ContactUsPage(driver);
         contactUsPage.setSubject(setSubject);
         contactUsPage.setEmailAddress();
         contactUsPage.setOrderRef();
         contactUsPage.setMsgText(msg);
         contactUsPage.setSendBtn();
         Thread.sleep(5000);
-
-        ContactUsAfterSendMsgPage contactUs_afterSendMsgPage = new ContactUsAfterSendMsgPage(driver);
         contactUs_afterSendMsgPage.getAlertSuccessText();
         contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed();
 
-
-String expected = "Your message has been successfully sent to our team.";
-    // dziala:
         Assert.assertTrue(contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed());
-
-        //assert nie dziala:
-
-  // Assert.assertEquals(expected,contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your"));
-   Assert.assertTrue(contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your"));
-
-   //       // Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
+        Assert.assertTrue(contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your"));
     }
-
-
 
     @After
     public void endTest() {
         driver.quit();
     }
-
 }

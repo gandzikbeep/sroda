@@ -18,41 +18,27 @@ public class DressesCatSummerPage {    // DO USUNIĘCIA
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]")
     WebElement selectSecondDress;
-    ////*[@id="center_column"]/ul/li[2]/div/div[2]/div[2]/a[1]/span
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span")
     WebElement addToCart_secondDress;
-    //                 //*[@id="center_column"]/ul/li[2]/div/div[2]/div[2]/a[1]/span
-                      ////*[@id="center_column"]/ul/li[2]/div/div[2]/div[2]/a[1]/span
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]")
-    WebElement popup_successAddtoCart;
+    WebElement popup_successAddToCart;
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")
     WebElement proceedTocheckoutOnPopup;
-
-//    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[1]/span")
-//    WebElement priceSecondDress;
 
     public void setSecondDress() {
         selectSecondDress.click();
     }
 
     public void setSecondDressAddToChart() {
-
         addToCart_secondDress.click();
     }
 
     public void setProceedTocheckoutOnPopup() {
-
         proceedTocheckoutOnPopup.click();
     }
-
-//    public void setPriceSecondDress() {
-//        priceSecondDress.getText();
-//    }
-
-
 }
 
 

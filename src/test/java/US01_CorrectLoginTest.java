@@ -23,7 +23,7 @@ public class US01_CorrectLoginTest {
     }
 
     @Test
-    public void correctLogin() throws InterruptedException {
+    public void correctLogin() {
 
         LoginPage loginPage = new LoginPage(driver);
         WelcomePage welcomePage = new WelcomePage(driver);
@@ -34,9 +34,8 @@ public class US01_CorrectLoginTest {
         loginPage.logIn(correctUsername, correctPassword);
 
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
-        Assert.assertTrue(welcomePage.getLoggedUser());
+        Assert.assertTrue(welcomePage.isLoggedUserIsVisibleSection());
         Assert.assertTrue(welcomePage.isLogoutButtonVisible());
-        Thread.sleep(2000);
 
     }
 

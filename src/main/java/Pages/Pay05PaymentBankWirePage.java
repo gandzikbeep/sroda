@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Pay05Payment_BankWirePage {
+public class Pay05PaymentBankWirePage {
     WebDriver driver;
 
-    public Pay05Payment_BankWirePage(WebDriver driver) {
+    public Pay05PaymentBankWirePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -19,7 +19,6 @@ public class Pay05Payment_BankWirePage {
     public void setConfirmBtn() {
         confirmBtn.click();
     }
-
 }
 
 

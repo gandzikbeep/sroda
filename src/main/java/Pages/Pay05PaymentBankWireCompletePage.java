@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.awt.*;
 
 public class Pay05PaymentBankWireCompletePage {
-    //    public Label amountPrice;
+
     WebDriver driver;
 
     public Pay05PaymentBankWireCompletePage(WebDriver driver) {
@@ -18,15 +18,10 @@ public class Pay05PaymentBankWireCompletePage {
 
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/p")
-            //"//*[@id=\"center_column\"]/div/span")
-    WebElement completeOrderSection;   ////*[@id="center_column"]/div/p/strong
-    ////*[@id="center_column"]/div/p
+    WebElement completeOrderSection;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/p/a")
     WebElement backToOrdersBtn;
-
-    @FindBy(xpath = "//*[@id=\"amount\"]")
-    WebElement amountPrice;
 
     public boolean isVisibleCompleteOrderSection() {
         return completeOrderSection.isDisplayed();
@@ -35,10 +30,6 @@ public class Pay05PaymentBankWireCompletePage {
     public void setBackToOrdersBtn() {
         backToOrdersBtn.click();
     }
-
-//    public void checkAmount() {
-//        amountPrice.getText();
-//    }
 }
 
 

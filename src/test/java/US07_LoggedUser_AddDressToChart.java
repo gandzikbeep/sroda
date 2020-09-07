@@ -32,7 +32,7 @@ public class US07_LoggedUser_AddDressToChart {
         Pay03AddressPage pay03_addressPage = new Pay03AddressPage(driver);
         Pay04ShippingPage pay04_shippingPage = new Pay04ShippingPage(driver);
         Pay05PaymentPage pay05_paymentPage = new Pay05PaymentPage(driver);
-        Pay05Payment_BankWirePage pay05_payment_bankWirePage = new Pay05Payment_BankWirePage(driver);
+        Pay05PaymentBankWirePage pay05_payment_bankWirePage = new Pay05PaymentBankWirePage(driver);
         Pay05PaymentBankWireCompletePage pay05_payment_bankWire_completePage = new Pay05PaymentBankWireCompletePage(driver);
 
 
@@ -58,10 +58,8 @@ public class US07_LoggedUser_AddDressToChart {
 
     }
 
-
     @After
     public void endTest() {
         driver.quit();
     }
-
 }

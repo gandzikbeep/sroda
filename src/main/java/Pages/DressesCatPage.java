@@ -33,7 +33,6 @@ public class DressesCatPage {
     public void setSummerDresses() {
         summerDresses.click();
     }
-
 }
 
 

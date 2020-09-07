@@ -16,12 +16,16 @@ public class ContactUsPage {
 
     @FindBy(xpath = "//*[@id=\"id_contact\"]")
     WebElement subjectHeading;
+
     @FindBy(xpath = "//*[@id=\"email\"]")
     WebElement email;
+
     @FindBy(xpath = "//*[@id=\"center_column\"]/form/fieldset/div[1]/div[1]/div[2]/div/select")
     WebElement orderRef;
+
     @FindBy(xpath = "//*[@id=\"message\"]")
     WebElement msgText;
+
     @FindBy(xpath = "//*[@id=\"submitMessage\"]")
     WebElement sendBtn;
 
@@ -45,9 +49,9 @@ public class ContactUsPage {
     public void setMsgText(String msg) {
         msgText.sendKeys(textMsg);
     }
-    public void setSendBtn(){
+
+    public void setSendBtn() {
         sendBtn.click();
     }
-
 }
 

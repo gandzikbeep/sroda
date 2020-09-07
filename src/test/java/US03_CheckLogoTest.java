@@ -25,6 +25,7 @@ public class US03_CheckLogoTest {
     public void checkLogo() {
 
         HomePage homePage = new HomePage(driver);
+
         homePage.checkLogo();
 
         Assert.assertTrue(homePage.checkLogo());

@@ -13,7 +13,7 @@ public class DataFakerPage {
     }
 
     public String getFakeFirstName() {
-        return faker.name().firstName();
+                return faker.name().firstName();
     }
 
     public String getFakeLastName() {
@@ -25,22 +25,38 @@ public class DataFakerPage {
     }
 
     public String getFakePassword() {
-        return  faker.internet().password();
+        return faker.internet().password();
     }
 
-    public String getFakeCompany(){return faker.company().name(); }
+    public String getFakeCompany() {
+        return faker.company().name();
+    }
 
-    public String getFakeAddress() {return faker.address().streetAddress();}
+    public String getFakeAddress() {
+        return faker.address().streetAddress();
+    }
 
-    public String getFakeNumber() {return faker.number().digit();}
+    public String getFakeNumber() {
+        return faker.number().digit();
+    }
 
-    public String getFakeCity() {return faker.address().city();}
+    public String getFakeCity() {
+        return faker.address().city();
+    }
 
-    public String getFakeMobilePhone() {return faker.phoneNumber().cellPhone();}
+    public String getFakeMobilePhone() {
+        return faker.phoneNumber().cellPhone();
+    }
 
-    public String getFakeHomeNumber() {return faker.phoneNumber().cellPhone();}
+    public String getFakeHomeNumber() {
+        return faker.phoneNumber().cellPhone();
+    }
 
-   public String getFakeZipCode() {return faker.address().zipCode();}
+    public String getFakeZipCode() {
+        return faker.address().zipCode();
+    }
 
-    public String getFakeAddInfo() {return faker.cat().name();}
+    public String getFakeAddInfo() {
+        return faker.cat().name();
+    }
 }

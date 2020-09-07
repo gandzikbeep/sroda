@@ -37,13 +37,12 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
         String correctPassword = "1234567";
 
         homePage.goToSignInButton();
-        loginPage.logIn(correctUsername,correctPassword);
+        loginPage.logIn(correctUsername, correctPassword);
 
         Thread.sleep(200);
         welcomePage.setLogout();
 
         Assert.assertTrue(loginPage.IsSignInButtonIsVisibleOnLoginPage());
-
     }
 
     @After
