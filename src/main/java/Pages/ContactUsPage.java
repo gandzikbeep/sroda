@@ -29,8 +29,7 @@ public class ContactUsPage {
     @FindBy(xpath = "//*[@id=\"submitMessage\"]")
     WebElement sendBtn;
 
-    String orderRefValue = "231608";
-    String textMsg = "some text in message field";
+
 
     public void setSubject(String setSubject) {
         Select drpSubject = new Select(subjectHeading);
@@ -41,12 +40,12 @@ public class ContactUsPage {
         email.click();
     }
 
-    public void setOrderRef() {
+    public void setOrderRef(String orderRefValue) {
         Select drpOrderRef = new Select(orderRef);
         drpOrderRef.selectByValue(orderRefValue);
     }
 
-    public void setMsgText(String msg) {
+    public void setMsgText(String textMsg) {
         msgText.sendKeys(textMsg);
     }
 

@@ -32,16 +32,16 @@ public class US09_SendMsg {
         String email = "anna@test.pl";
         String password = "111111";
         String setSubject = "2";
-        String msg = "jakas wiadomosc";
-        String expected = "Your message has been successfully sent to our team.";
+        String textMsg = "jakas wiadomosc";
+        String orderRefValue = "231608";
 
         homePage.goToSignInButton();
         loginPage.logIn(email, password);
         welcomePage.getContactUs();
         contactUsPage.setSubject(setSubject);
         contactUsPage.setEmailAddress();
-        contactUsPage.setOrderRef();
-        contactUsPage.setMsgText(msg);
+        contactUsPage.setOrderRef(orderRefValue);
+        contactUsPage.setMsgText(textMsg);
         contactUsPage.setSendBtn();
         Thread.sleep(5000);
         contactUs_afterSendMsgPage.getAlertSuccessText();
