@@ -24,16 +24,15 @@ public class US01_CorrectLoginTest {
 
     @Test
     public void correctLogin() throws InterruptedException {
+
+        LoginPage loginPage = new LoginPage(driver);
+        WelcomePage welcomePage = new WelcomePage(driver);
+
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
 
-        LoginPage loginPage = new LoginPage(driver);
+        loginPage.logIn(correctUsername, correctPassword);
 
-        loginPage.setEmailLogin(correctUsername);
-        loginPage.setPassword(correctPassword);
-        loginPage.clickLoginBtn();
-
-        WelcomePage welcomePage = new WelcomePage(driver);
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
         Assert.assertTrue(welcomePage.getLoggedUser());
         Assert.assertTrue(welcomePage.isLogoutButtonVisible());

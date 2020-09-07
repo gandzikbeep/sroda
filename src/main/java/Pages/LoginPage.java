@@ -17,7 +17,7 @@ public class LoginPage {
 
     private DataFakerPage faker = new DataFakerPage();
 
-    @FindBy(xpath = "//*[@id='email']")
+    @FindBy(xpath = "//*[@id='email']")       //"//*[@id='email']")
     WebElement emailInput;
 
     @FindBy(id = "passwd")
@@ -32,15 +32,26 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id=\"SubmitCreate\"]")
     WebElement submitCreateBtn;
 
-    @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
-    WebElement getSignInButton;
+    @FindBy(id = "SubmitLogin")  //     //  "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a"
+    WebElement setSignInButton;
 
-    @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-    WebElement womenTab;
 
-    public void setEmailCreateInput(String correctUsername2) {
+
+   //nowa metoda create an account
+    public void createAnAccount(String correctusername2){
         emailCreateInput.sendKeys(faker.getFakeEmail());
+        submitCreateBtn.click();
+            }
+    // nowa metoda logIn
+    public void logIn(String correctUsername, String correctPassword){
+        emailInput.sendKeys(correctUsername);
+        passwordInput.sendKeys(correctPassword);
+        setSignInButton.click();
     }
+// do usuniecia pojedyncze metody
+//    public void setEmailCreateInput(String correctUsername2) {
+//        emailCreateInput.sendKeys(faker.getFakeEmail());
+//    }
 
     public void setEmailLogin(String emailLogin) {
         emailInput.sendKeys(emailLogin);
@@ -50,7 +61,7 @@ public class LoginPage {
         passwordInput.sendKeys(password);
     }
 
-    public void clickLoginBtn() {
+    public void clickLoginBtn() {   ////zmiana!!!!!
         signInButton.click();
     }
 
@@ -59,17 +70,11 @@ public class LoginPage {
     }
 
     public boolean IsSignInButtonIsVisibleOnLoginPage() {
-        getSignInButton.isDisplayed();
+        setSignInButton.isDisplayed();
         return true;
     }
 
-    public void signIn() {
-        submitCreateBtn.click();
-    }
 
-    public void goToWomenTab() {
-        womenTab.click();
-    }
 
 
 }

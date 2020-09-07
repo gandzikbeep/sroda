@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class ContactUs_AfterSendMsgPage {
     WebDriver driver;
+    private String jakis;
 
     public ContactUs_AfterSendMsgPage(WebDriver driver) {
         this.driver = driver;
@@ -15,18 +15,24 @@ public class ContactUs_AfterSendMsgPage {
     }
 
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]")
-    WebElement alertSuccess;
+    @FindBy(xpath = "//*[contains(text(),'Your message has been successfully sent to our team.')]")     // stare "//*[@id=\"center_column\"]"
+    WebElement alertSuccessText;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a" )
+    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a")
     WebElement homeBtn;
+    @FindBy(xpath = "//*[@id=\"center_column\"]")
+    WebElement alertSuccessSection;
+
 
     public String getAlertSuccessText() {  // //*[@id="center_column"]/p
-        return alertSuccess.getText();
+        return alertSuccessText.getText();
     }
-    public boolean isAlertSuccessSection(){
-        return alertSuccess.isDisplayed();
+
+
+    public boolean isAlertSuccessSectionIsDisplayed() {
+        return alertSuccessSection.isDisplayed();
     }
+
     public void getHomeBtn() {
         homeBtn.click();
     }

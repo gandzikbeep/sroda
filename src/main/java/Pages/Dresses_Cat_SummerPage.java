@@ -18,9 +18,12 @@ public class Dresses_Cat_SummerPage {    // DO USUNIĘCIA
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]")
     WebElement selectSecondDress;
+    ////*[@id="center_column"]/ul/li[2]/div/div[2]/div[2]/a[1]/span
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span")
     WebElement addToCart_secondDress;
+    //                 //*[@id="center_column"]/ul/li[2]/div/div[2]/div[2]/a[1]/span
+                      ////*[@id="center_column"]/ul/li[2]/div/div[2]/div[2]/a[1]/span
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]")
     WebElement popup_successAddtoCart;

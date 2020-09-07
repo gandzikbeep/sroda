@@ -26,22 +26,19 @@ public class US05_CorrectLogout<correctUsername, correctPassword> {
     }
 
     @Test
-    //HomePage homePage = new HomePage(driver);
-    //  LoginPage loginPage = new LoginPage(driver);
 
     public void correctLoginWithLogout() throws InterruptedException {
+
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        WelcomePage welcomePage = new WelcomePage(driver);
+
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
 
-        HomePage homePage = new HomePage(driver);
         homePage.goToSignInButton();
-        LoginPage loginPage = new LoginPage(driver);
+        loginPage.logIn(correctUsername,correctPassword);
 
-        loginPage.setEmailLogin(correctUsername);
-        loginPage.setPassword(correctPassword);
-        loginPage.clickLoginBtn();
-
-        WelcomePage welcomePage = new WelcomePage(driver);
         Thread.sleep(200);
         welcomePage.setLogout();
 

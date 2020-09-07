@@ -21,7 +21,7 @@ public class US09_SendMsg {
     }
 
     @Test
-    public void sendMsgAsALoggedUser() {
+    public void sendMsgAsALoggedUser() throws InterruptedException {
         String email = "anna@test.pl";
         String password = "111111";
         String setSubject = "2";
@@ -42,18 +42,25 @@ public class US09_SendMsg {
         contactUsPage.setOrderRef();
         contactUsPage.setMsgText(msg);
         contactUsPage.setSendBtn();
+        Thread.sleep(5000);
+
         ContactUs_AfterSendMsgPage contactUs_afterSendMsgPage = new ContactUs_AfterSendMsgPage(driver);
         contactUs_afterSendMsgPage.getAlertSuccessText();
-        contactUs_afterSendMsgPage.isAlertSuccessSection();
-        contactUs_afterSendMsgPage.getHomeBtn();
+        contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed();
+
 
 String expected = "Your message has been successfully sent to our team.";
-        Assert.assertTrue(contactUs_afterSendMsgPage.isAlertSuccessSection());
+    // dziala:
+        Assert.assertTrue(contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed());
+
         //assert nie dziala:
-    // Assert.assertEquals(expected,contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your message has been successfully sent to our team."));
 
+  // Assert.assertEquals(expected,contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your"));
+   Assert.assertTrue(contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your"));
 
+   //       // Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
     }
+
 
 
     @After

@@ -25,6 +25,14 @@ public class US02_CorrectRegisterUserTest {
     @Test
     public void correctRegister() {
 
+        DataFakerPage faker = new DataFakerPage();
+        WelcomePage welcomePage = new WelcomePage(driver);
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
+
+
+
         String correctDay = "4";
         String correctMonth = "4";
         String correctYear = "1990";
@@ -39,18 +47,11 @@ public class US02_CorrectRegisterUserTest {
         String mobilePhone = "9189189187";
         String alias = "jakisAlias";
         boolean setGenderAsMale = false;
-        String correctusername2 = null;
+        String correctusername2 = faker.getFakeEmail() ;
 
-        DataFakerPage faker = new DataFakerPage();
-        WelcomePage welcomePage = new WelcomePage(driver);
 
-        HomePage homePage = new HomePage(driver);
-//        homePage.goToLoginPage();
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.setEmailCreateInput(correctusername2);
-        loginPage.goToCreateAccountFormPage();
+        loginPage.createAnAccount(correctusername2);
 
-        CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
         createAccountFormPage.setGender(setGenderAsMale);
         createAccountFormPage.enterFirstName(faker.getFakeFirstName());
         createAccountFormPage.enterLastName(faker.getFakeLastName());

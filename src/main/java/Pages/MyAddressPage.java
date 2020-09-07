@@ -41,7 +41,13 @@ public class MyAddressPage {
     WebElement mobilePhone;
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]/span")
-    WebElement updateBtn;
+    //@FindBy(xpath = "//*[@id="center_column"]//*[@class="btn btn-default button button-small"]")
+////*[@id="center_column"]/div[1]/div/div/ul/li[9]/a[1]/span
+
+
+        WebElement updateBtn;
+
+
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[2]/span")
     WebElement deleteBtn;
     @FindBy(xpath = "//*[@id=\"center_column\"]/p")

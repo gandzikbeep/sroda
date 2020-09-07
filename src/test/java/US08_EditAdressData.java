@@ -26,6 +26,7 @@ public class US08_EditAdressData {
         WelcomePage welcomePage = new WelcomePage(driver);
         MyAddressPage myAddressPage = new MyAddressPage(driver);
         MyAddress_UpdatePage myAddress_updatePage = new MyAddress_UpdatePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 
 
@@ -43,22 +44,23 @@ public class US08_EditAdressData {
         String newAlias = "jakis_nowy";
         String newState = "30";
         String newCountry = "United States";
+        String correctUsername = "anna@test.pl";
+        String correctPassword = "111111";
 
         //TEST:
 
-        login();
+        loginPage.logIn( correctUsername,  correctPassword);
         welcomePage.navigateWelcomePageToMyAddress();
+
         myAddressPage.setUpdateBtn();
         myAddress_updatePage.fillAllForm(newFirstName, newLastName, newCompany, newAddress1, newAddress2,
                 newCity, newState, newZipCode, newCountry, newHomePhone,
                 newMobilePhone, newAddInfo, newAlias);
         myAddress_updatePage.setSaveBtn();
-        //myAddressPage.checkWelcomeText();
+
 
         //ASERCJE:
         Assert.assertTrue(myAddressPage.checkWelcomeText().contains("Please configure your default billing and delivery addresses when placing an order. You may also add additional addresses, which can be useful for sending gifts or receiving an order at your office.")); // cos zmienic
-
-        // Assert.assertTrue(welcomePage.getWelcomeTxt().contains(""));
         Assert.assertEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
         Assert.assertEquals("message", newCity + ",", myAddressPage.setCity());
         Assert.assertEquals(newZipCode, myAddressPage.setZipCode());
@@ -69,9 +71,11 @@ public class US08_EditAdressData {
 
 
     public void editWithoutSaveAddress() {
+
         WelcomePage welcomePage = new WelcomePage(driver);
         MyAddressPage myAddressPage = new MyAddressPage(driver);
         MyAddress_UpdatePage myAddress_updatePage = new MyAddress_UpdatePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 
         // dane testowe:
@@ -88,9 +92,12 @@ public class US08_EditAdressData {
         String newAlias = "jakis_nowy";
         String newState = "30";
         String newCountry = "United States";
+        String correctUsername = "anna@test.pl";
+        String correctPassword = "111111";
 
-        login();
-        welcomePage.navigateWelcomePageToMyAddress();
+       //TEST
+        loginPage.logIn( correctUsername,  correctPassword);
+                welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
         myAddress_updatePage.fillAllForm(newFirstName, newLastName, newCompany, newAddress1, newAddress2,
                 newCity, newState, newZipCode, newCountry, newHomePhone,
@@ -99,19 +106,8 @@ public class US08_EditAdressData {
 
         //ASERCJE
         Assert.assertNotEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
-
     }
 
-    private void login() {
-        String correctUsername = "anna@test.pl";
-        String correctPassword = "111111";
-
-        LoginPage loginPage = new LoginPage(driver);
-
-        loginPage.setEmailLogin(correctUsername);
-        loginPage.setPassword(correctPassword);
-        loginPage.clickLoginBtn();
-    }
 
     @After
     public void endTest() {

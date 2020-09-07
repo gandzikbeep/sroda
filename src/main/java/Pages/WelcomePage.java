@@ -19,7 +19,7 @@ public class WelcomePage {
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]//a")
     WebElement loggedUser;
 
-    @FindBy(xpath = "//a[@href='http://automationpractice.com/index.php?mylogout=']")   //(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
+    @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")  // //*[@id="header"]/div[2]/div/div/nav/div[2]/a   //(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
     WebElement logoutButton;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
@@ -73,7 +73,7 @@ public class WelcomePage {
     }
 
     public void navigateWelcomePageToMyAddress() {
-        driver.navigate().to(getWelcomePageUrl);
+        //driver.navigate().to(getWelcomePageUrl);
         driver.navigate().to(getMyAddressUrl);
     }
 

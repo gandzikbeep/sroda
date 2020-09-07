@@ -17,8 +17,10 @@ public class Pay05_Payment_BankWire_CompletePage {
     }
 
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div/p/strong")  //  //*[@id="center_column"]/div/span
-    WebElement completeOrderSection;
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div/p")
+            //"//*[@id=\"center_column\"]/div/span")
+    WebElement completeOrderSection;   ////*[@id="center_column"]/div/p/strong
+    ////*[@id="center_column"]/div/p
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/p/a")
     WebElement backToOrdersBtn;

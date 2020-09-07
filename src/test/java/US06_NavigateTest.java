@@ -26,70 +26,84 @@ public class US06_NavigateTest {
 
     @Test
     public void testNavigateOrderHistoryTab() {
-        //LOGOWANIE
-        onlyCorrectLogin();
 
+        LoginPage loginPage = new LoginPage(driver);
         WelcomePage welcomePage = new WelcomePage(driver);
-        welcomePage.navigateWelcomePageToOrderHistory();
 
+        String correctUsername = "correctUsername@pl.pl";
+        String correctPassword = "1234567";
         String expectedURL = "http://automationpractice.com/index.php?controller=history";
+
+        loginPage.logIn(correctUsername, correctPassword);
+        welcomePage.navigateWelcomePageToOrderHistory();
 
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
 
     @Test
     public void testNavigateCreditSlips() {
-        //LOGOWANIE
-        onlyCorrectLogin();
 
+        LoginPage loginPage = new LoginPage(driver);
         WelcomePage welcomePage = new WelcomePage(driver);
-        welcomePage.navigateWelcomePageToMyCreditSlips();
 
+        String correctUsername = "correctUsername@pl.pl";
+        String correctPassword = "1234567";
         String expectedURL = "http://automationpractice.com/index.php?controller=order-slip";
+
+        loginPage.logIn(correctUsername, correctPassword);
+        welcomePage.navigateWelcomePageToMyCreditSlips();
 
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
 
     @Test
     public void testNavigateToMyAddress() {
-        onlyCorrectLogin();
+
+        LoginPage loginPage = new LoginPage(driver);
         WelcomePage welcomePage = new WelcomePage(driver);
-        welcomePage.navigateWelcomePageToMyAddress();
+        String correctUsername = "correctUsername@pl.pl";
+        String correctPassword = "1234567";
         String expectedURL = "http://automationpractice.com/index.php?controller=addresses";
+
+        loginPage.logIn(correctUsername, correctPassword);
+        welcomePage.navigateWelcomePageToMyAddress();
+
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
 
     @Test
     public void testNavigateToMyPersonalInfo() {
-        onlyCorrectLogin();
+        LoginPage loginPage = new LoginPage(driver);
         WelcomePage welcomePage = new WelcomePage(driver);
-        welcomePage.navigateWelcomePageToMyPersonalInfo();
+
+        String correctUsername = "correctUsername@pl.pl";
+        String correctPassword = "1234567";
         String expectedURL = "http://automationpractice.com/index.php?controller=identity";
+
+        loginPage.logIn(correctUsername, correctPassword);
+        welcomePage.navigateWelcomePageToMyPersonalInfo();
+
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
 
     @Test
     public void testNavigateToWishlist() {
-        onlyCorrectLogin();
-        WelcomePage welcomePage = new WelcomePage(driver);
-        welcomePage.navigateWelcomePageToMyWishlist();
-        String expectedURL = "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist";
-        Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
-    }
 
-    //LOGOWANIE
-    private void onlyCorrectLogin() {
         LoginPage loginPage = new LoginPage(driver);
+        WelcomePage welcomePage = new WelcomePage(driver);
+
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
-        loginPage.setEmailLogin(correctUsername);
-        loginPage.setPassword(correctPassword);
-        loginPage.clickLoginBtn();
+        String expectedURL = "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist";
+
+        loginPage.logIn(correctUsername, correctPassword);
+        welcomePage.navigateWelcomePageToMyWishlist();
+
+        Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
     }
 
     @After
     public void endTest() {
         driver.quit();
     }
-
 }
