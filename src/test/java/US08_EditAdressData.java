@@ -25,7 +25,7 @@ public class US08_EditAdressData {
 
         WelcomePage welcomePage = new WelcomePage(driver);
         MyAddressPage myAddressPage = new MyAddressPage(driver);
-        MyAddress_UpdatePage myAddress_updatePage = new MyAddress_UpdatePage(driver);
+        MyAddressUpdatePage myAddress_updatePage = new MyAddressUpdatePage(driver);
         LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 
@@ -74,7 +74,7 @@ public class US08_EditAdressData {
 
         WelcomePage welcomePage = new WelcomePage(driver);
         MyAddressPage myAddressPage = new MyAddressPage(driver);
-        MyAddress_UpdatePage myAddress_updatePage = new MyAddress_UpdatePage(driver);
+        MyAddressUpdatePage myAddress_updatePage = new MyAddressUpdatePage(driver);
         LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 

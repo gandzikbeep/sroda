@@ -1,16 +1,15 @@
 package Pages;
 
-import org.apache.http.util.Asserts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class MyAddress_UpdatePage {
+public class MyAddressUpdatePage {
     WebDriver driver;
 
-    public MyAddress_UpdatePage(WebDriver driver) {
+    public MyAddressUpdatePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

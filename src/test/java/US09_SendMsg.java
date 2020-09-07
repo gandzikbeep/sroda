@@ -44,7 +44,7 @@ public class US09_SendMsg {
         contactUsPage.setSendBtn();
         Thread.sleep(5000);
 
-        ContactUs_AfterSendMsgPage contactUs_afterSendMsgPage = new ContactUs_AfterSendMsgPage(driver);
+        ContactUsAfterSendMsgPage contactUs_afterSendMsgPage = new ContactUsAfterSendMsgPage(driver);
         contactUs_afterSendMsgPage.getAlertSuccessText();
         contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed();
 

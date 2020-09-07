@@ -26,14 +26,14 @@ public class US07_LoggedUser_AddDressToChart {
         LoginPage loginPage = new LoginPage(driver);
         WelcomePage welcomePage = new WelcomePage(driver);
         WomenTabPage womenTabPage = new WomenTabPage(driver);
-        Dresses_CatPage dresses_catPage = new Dresses_CatPage(driver);
-        Dresses_Cat_SummerPage dresses_cat_summerPage = new  Dresses_Cat_SummerPage(driver);
-        Pay01_SummaryPage pay01_summaryPage = new Pay01_SummaryPage(driver);
-        Pay03_AddressPage pay03_addressPage = new Pay03_AddressPage(driver);
-        Pay04_ShippingPage pay04_shippingPage = new Pay04_ShippingPage(driver);
-        Pay05_PaymentPage pay05_paymentPage = new Pay05_PaymentPage(driver);
-        Pay05_Payment_BankWirePage pay05_payment_bankWirePage = new Pay05_Payment_BankWirePage(driver);
-        Pay05_Payment_BankWire_CompletePage pay05_payment_bankWire_completePage = new Pay05_Payment_BankWire_CompletePage(driver);
+        DressesCatPage dresses_catPage = new DressesCatPage(driver);
+        DressesCatSummerPage dresses_cat_summerPage = new DressesCatSummerPage(driver);
+        Pay01SummaryPage pay01_summaryPage = new Pay01SummaryPage(driver);
+        Pay03AddressPage pay03_addressPage = new Pay03AddressPage(driver);
+        Pay04ShippingPage pay04_shippingPage = new Pay04ShippingPage(driver);
+        Pay05PaymentPage pay05_paymentPage = new Pay05PaymentPage(driver);
+        Pay05Payment_BankWirePage pay05_payment_bankWirePage = new Pay05Payment_BankWirePage(driver);
+        Pay05PaymentBankWireCompletePage pay05_payment_bankWire_completePage = new Pay05PaymentBankWireCompletePage(driver);
 
 
         String correctUsername = "anna@test.pl";
