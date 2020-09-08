@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class CreateAccountFormPage {
-    private DataFakerPage faker = new DataFakerPage();
+   // private final DataFakerPage faker = new DataFakerPage();
 
     WebDriver driver;
 
@@ -35,7 +36,7 @@ public class CreateAccountFormPage {
     @FindBy(id = "passwd")
     WebElement createPassword;
 
-    @FindBy(id = "days")                        //dropdowny
+    @FindBy(id = "days")
     WebElement drpDateOfBirthDays;
 
     @FindBy(id = "months")
@@ -44,7 +45,7 @@ public class CreateAccountFormPage {
     @FindBy(id = "years")
     WebElement drpDateOfBirthYears;
 
-    @FindBy(id = "uniform-newsletter")             //checkboxy x 2
+    @FindBy(id = "uniform-newsletter")
     WebElement checkboxNews;
 
     @FindBy(id = "optin")
@@ -65,7 +66,7 @@ public class CreateAccountFormPage {
     @FindBy(id = "postcode")
     WebElement zipCode;
 
-    @FindBy(id = "id_country")   ///drpCountry
+    @FindBy(id = "id_country")
     WebElement drpCountry;
 
     @FindBy(id = "other")
@@ -83,6 +84,7 @@ public class CreateAccountFormPage {
     @FindBy(id = "submitAccount")
     WebElement btnSubmitAccount;
 
+
     public void setGender(boolean isMale) {
         if (isMale) {
             rdbGenderMale.click();
@@ -91,90 +93,41 @@ public class CreateAccountFormPage {
         }
     }
 
-    public void enterFirstName(String correctFirstName) {
-        firstName.sendKeys(correctFirstName);
-    }
+    public void createAnAccountFillForm(String correctDay, String correctMonth, String correctYear, String firstName,
+                                        String lastName, String password, String correctAddress1, String correctAddress2,
+                                        String city, String state, String country, String zipcode, String addInfo,
+                                        String homePhone, String mobilePhone, String alias) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-    public void enterLastName(String correctLastName) {
-        lastName.sendKeys(correctLastName);
-    }
-
-    public void enterEmailLogin(String correctEmail) {
+        this.firstName.sendKeys(firstName);
+        this.lastName.sendKeys(lastName);
         emailInput.click();
-    }
-
-    public void setPassword(String correctPassword) {
-        createPassword.sendKeys(faker.getFakePassword());
-    }
-
-    public void setDayOfBirth(String correctDay) {
+        createPassword.sendKeys(password);
+        js.executeScript(("window.scrollBy(0,200)"));
         Select daysSelect = new Select(drpDateOfBirthDays);
         daysSelect.selectByValue(correctDay);
-    }
-
-    public void setMonthOfBirth(String correctMonth) {
         Select monthSelect = new Select(drpDateOfBirthMonths);
         monthSelect.selectByValue(correctMonth);
-    }
-
-    public void setYearOfBirth(String correctYear) {      //dropdown
         Select yearSelect = new Select(drpDateOfBirthYears);
         yearSelect.selectByValue(correctYear);
-    }
-
-    public void setCheckCheckboxNews() {
+        js.executeScript(("window.scrollBy(0,300)"));
         checkboxNews.click();
-    }
-
-    public void setCheckCheckboxSpecialOffers() {
         checkBoxSpecialOffers.click();
-    }
-
-    public void setAddressLine1(String addressLine1) {
-        address1.sendKeys(addressLine1);
-    }
-
-    public void setAddressLine2(String addressLine2) {
-        address2.sendKeys(addressLine2);
-    }
-
-    public void setCity(String cityName) {
-        city.sendKeys(cityName);
-    }
-
-    public void setState(String state) {
+        address1.sendKeys(correctAddress1);
+        address2.sendKeys(correctAddress2);
+        this.city.sendKeys(city);
         Select stateSelect = new Select(drpState);
         stateSelect.selectByValue(state);
-    }
-
-    public void setCountry(String country) {
         Select countrySelect = new Select(drpCountry);
         countrySelect.selectByValue(country);
-    }
-
-    public void setZipCode(String zipCode1) {
-        zipCode.sendKeys(zipCode1);
-    }
-
-    public void setAddInfo(String addInfo1) {
-        addInfo.sendKeys(addInfo1);
-    }
-
-    public void setHomePhone(String homePhone1) {
-        homePhone.sendKeys(homePhone1);
-    }
-
-    public void setMobilePhone(String mobilePhone1) {
-        mobilePhone.sendKeys(mobilePhone1);
-    }
-
-    public void setAlias(String alias1) {
-        alias.clear();
-        alias.sendKeys(alias1);
-    }
-
-    public void setBtnSubmitAccount() {
+        zipCode.sendKeys(zipcode);
+        this.addInfo.sendKeys(addInfo);
+        this.homePhone.sendKeys(homePhone);
+        this.mobilePhone.sendKeys(mobilePhone);
+        this.alias.clear();
+        this.alias.sendKeys(alias);
         btnSubmitAccount.click();
     }
 }
+
 

@@ -73,14 +73,13 @@ public class US08_EditAdressData {
         LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 
-        // dane testowe:
         String newFirstName = faker.getFakeFirstName();
         String newLastName = faker.getFakeLastName();
         String newCompany = faker.getFakeCompany();
         String newAddress1 = faker.getFakeAddress();
         String newAddress2 = faker.getFakeNumber();
         String newCity = faker.getFakeCity();
-        String newZipCode = faker.getFakeZipCode();
+        String newZipCode = "10111";
         String newHomePhone = faker.getFakeHomeNumber();
         String newMobilePhone = faker.getFakeMobilePhone();
         String newAddInfo = faker.getFakeAddInfo();
@@ -90,7 +89,6 @@ public class US08_EditAdressData {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
-        //TEST
         loginPage.logIn(correctUsername, correctPassword);
         welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
@@ -99,8 +97,8 @@ public class US08_EditAdressData {
                 newMobilePhone, newAddInfo, newAlias);
         myAddress_updatePage.setBackBtn();
 
-        //ASERCJE
         Assert.assertNotEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
+        Assert.assertNotEquals("Last name is not the same", newLastName, myAddressPage.getTextFromLastName());
     }
 
     @After
