@@ -32,6 +32,18 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"slider_row\"]")
     WebElement sliderContainer;
 
+    @FindBy(xpath = "//*[@id=\"search_query_top\"]")
+    WebElement searchBox;
+
+    @FindBy(xpath = "//*[@id=\"searchbox\"]/button")
+    WebElement searchBoxFind;
+
+    public void setSearchBox(String searchItem) {
+        searchBox.sendKeys(searchItem);
+        searchBoxFind.click();
+    }
+
+
     public void setContactLink() {
         contactLink.click();
     }
@@ -56,7 +68,7 @@ public class HomePage {
         return signIn.isDisplayed();
     }
 
-    public void goToSignInButton() {
+    public void setSignInButton() {
         signIn.click();
     }
 }
