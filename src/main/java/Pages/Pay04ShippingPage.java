@@ -27,7 +27,3 @@ public class Pay04ShippingPage {
         proceedToCheckoutBtn.click();
     }
 }
-
-
-
-

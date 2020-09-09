@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US05CorrectLogout<correctUsername, correctPassword> {
+public class US05CorrectLogout {
     WebDriver driver;
 
     @Before
@@ -27,7 +27,7 @@ public class US05CorrectLogout<correctUsername, correctPassword> {
 
     @Test
 
-    public void correctLoginWithLogout() throws InterruptedException {
+    public void correctLoginWithLogout() {
 
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
@@ -39,7 +39,6 @@ public class US05CorrectLogout<correctUsername, correctPassword> {
         homePage.setSignInButton();
         loginPage.logIn(correctUsername, correctPassword);
 
-        Thread.sleep(200);
         welcomePage.setLogout();
 
         Assert.assertTrue(loginPage.IsSignInButtonIsVisibleOnLoginPage());

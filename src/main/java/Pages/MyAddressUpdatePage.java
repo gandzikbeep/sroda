@@ -97,8 +97,9 @@ public class MyAddressUpdatePage {
     public void setBackBtn() {
         backBtn.click();
     }
+}
 
-    //----------//zrobienie jednej metody z wielu//-------------------------------------------------------//
+//----------//zrobienie jednej metody z wielu//-------------------------------------------------------//
 //    public void setFirstName(String newFirstName) {
 //        firstName.clear();
 //        firstName.sendKeys(newFirstName);
@@ -166,7 +167,7 @@ public class MyAddressUpdatePage {
 //    }
 
 
-}
+
 
 
 

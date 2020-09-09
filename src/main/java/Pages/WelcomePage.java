@@ -19,7 +19,7 @@ public class WelcomePage {
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]//a")
     WebElement loggedUser;
 
-    @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")  // //*[@id="header"]/div[2]/div/div/nav/div[2]/a   //(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
+    @FindBy(xpath = "//*[@class='logout']")
     WebElement logoutButton;
 
     @FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
@@ -28,14 +28,13 @@ public class WelcomePage {
     @FindBy(xpath = "//*[@id=\"contact-link\"]/a")
     WebElement contactUs;
 
-    String getWelcomePageUrl = "http://automationpractice.com/index.php?controller=my-account";
     String getOderHistoryUrl = "http://automationpractice.com/index.php?controller=history";
     String getCreditSlipsUrl = "http://automationpractice.com/index.php?controller=order-slip";
     String getMyAddressUrl = "http://automationpractice.com/index.php?controller=addresses";
     String getMyPersonalInfoUrl = "http://automationpractice.com/index.php?controller=identity";
     String getMyWishlistUrl = "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist";
 
-    public void getContactUs(){
+    public void getContactUs() {
         contactUs.click();
     }
 
@@ -43,12 +42,10 @@ public class WelcomePage {
         return welcomeText.getText();
     }
 
-    //czy jest widoczna sekcja z imieniem usera
     public boolean isLoggedUserIsVisibleSection() {
         return loggedUser.isDisplayed();
     }
 
-    //czy jest button Logout?:
     public boolean isLogoutButtonVisible() {
         return logoutButton.isDisplayed();
     }
@@ -81,4 +78,3 @@ public class WelcomePage {
         driver.navigate().to(getMyWishlistUrl);
     }
 }
-

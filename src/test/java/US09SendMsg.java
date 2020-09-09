@@ -21,7 +21,7 @@ public class US09SendMsg {
     }
 
     @Test
-    public void sendMsgAsALoggedUser() throws InterruptedException {
+    public void sendMsgAsALoggedUser() {
 
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
@@ -43,7 +43,6 @@ public class US09SendMsg {
         contactUsPage.setOrderRef(orderRefValue);
         contactUsPage.setMsgText(textMsg);
         contactUsPage.setSendBtn();
-        Thread.sleep(5000);
         contactUs_afterSendMsgPage.getAlertSuccessText();
         contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed();
 

@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ContactUsAfterSendMsgPage {
     WebDriver driver;
-    private String jakis;
 
     public ContactUsAfterSendMsgPage(WebDriver driver) {
         this.driver = driver;
@@ -35,4 +34,3 @@ public class ContactUsAfterSendMsgPage {
         homeBtn.click();
     }
 }
-

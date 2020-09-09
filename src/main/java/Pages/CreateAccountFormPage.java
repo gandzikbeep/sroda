@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class CreateAccountFormPage {
-   // private final DataFakerPage faker = new DataFakerPage();
 
     WebDriver driver;
 

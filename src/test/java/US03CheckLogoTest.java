@@ -36,5 +36,4 @@ public class US03CheckLogoTest {
     public void endTest() {
         driver.quit();
     }
-
 }

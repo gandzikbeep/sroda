@@ -35,7 +35,6 @@ public class US07LoggedUser_AddDressToChart {
         Pay05PaymentBankWirePage pay05_payment_bankWirePage = new Pay05PaymentBankWirePage(driver);
         Pay05PaymentBankWireCompletePage pay05_payment_bankWire_completePage = new Pay05PaymentBankWireCompletePage(driver);
 
-
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
@@ -45,7 +44,7 @@ public class US07LoggedUser_AddDressToChart {
         dresses_catPage.setSummerDresses();
         dresses_cat_summerPage.setSecondDress();
         dresses_cat_summerPage.setSecondDressAddToChart();
-        dresses_cat_summerPage.setProceedTocheckoutOnPopup();
+        dresses_cat_summerPage.setProceedToCheckoutOnPopup();
         pay01_summaryPage.setProceedToCheckoutBtn();
         pay03_addressPage.setProceedToCheckoutBtn();
         pay04_shippingPage.setCheckboxIAgree();

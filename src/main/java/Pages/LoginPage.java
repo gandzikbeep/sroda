@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage  {
     WebDriver driver;
 
     public LoginPage(WebDriver driver) {
@@ -30,13 +30,11 @@ public class LoginPage {
     @FindBy(id = "SubmitLogin")
     WebElement setSignInButton;
 
-    //nowa metoda create an account
-    public void createAnAccount(String correctUsername2) {
+    public void createAnAccount(String email) {
         emailCreateInput.sendKeys(faker.getFakeEmail());
         submitCreateBtn.click();
     }
 
-    // nowa metoda logIn
     public void logIn(String correctUsername, String correctPassword) {
         emailInput.sendKeys(correctUsername);
         passwordInput.sendKeys(correctPassword);

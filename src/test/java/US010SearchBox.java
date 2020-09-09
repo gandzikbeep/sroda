@@ -21,8 +21,8 @@ public class US010SearchBox {
         driver.get("http://automationpractice.com/index.php?");
     }
 
-    @Test                                                    //sortowanie od najnizszej ceny
-    public void sortingBy() throws InterruptedException {
+    @Test                       //sortowanie od najnizszej ceny
+    public void sortingBy() {
         HomePage homePage = new HomePage(driver);
         SearchPage searchPage = new SearchPage(driver);
 
@@ -34,10 +34,9 @@ public class US010SearchBox {
         searchPage.qtyItems();
 
         Assert.assertTrue(searchPage.qtyItems().contains("7"));
+    }
 
-}
-
-        //Values do sortowania
+    //Values do sortowania
 //
 //        position:asc
 //        value="price:asc" Price: Lowest first
@@ -48,8 +47,9 @@ public class US010SearchBox {
 //        reference:asc Reference: Lowest first
 //        reference:desc Reference: Highest first
 
+
     @Test
-    public void searchRealProduct(){
+    public void searchRealProduct() {
         HomePage homePage = new HomePage(driver);
         SearchPage searchPage = new SearchPage(driver);
 
@@ -58,11 +58,11 @@ public class US010SearchBox {
         homePage.setSearchBox(searchItem);
         searchPage.isQtyItemsIsVisible();
 
-        Assert.assertTrue("mess",searchPage.isQtyItemsIsVisible());
+        Assert.assertTrue("mess", searchPage.isQtyItemsIsVisible());
     }
 
     @Test
-    public void searchFakeProduct(){
+    public void searchFakeProduct() {
 
         HomePage homePage = new HomePage(driver);
         SearchPage searchPage = new SearchPage(driver);

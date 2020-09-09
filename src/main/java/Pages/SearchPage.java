@@ -17,7 +17,6 @@ public class SearchPage {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(xpath = "//*[@class='selectProductSort form-control']")
     WebElement drpSortBy;
 
@@ -27,8 +26,7 @@ public class SearchPage {
     @FindBy(xpath = "//*[@id=\"center_column\"]/p")
     WebElement alertWarning;
 
-
-    public void setDrpSortBy(String valueSortOf)  {
+    public void setDrpSortBy(String valueSortOf) {
         Select sortBy = new Select(drpSortBy);
         sortBy.selectByValue(valueSortOf);
     }
@@ -48,23 +46,4 @@ public class SearchPage {
     public String getTextFromAlert(String searchItem) {
         return alertWarning.getText();
     }
-
-//    public WebElement isSetProductListIsVisible() {
-//
-//       {
-//           productList.isDisplayed();
-//       }
-//       return alertWarning;
-//   }
-
-
 }
-
-// METODA DO SRORTOWANIA PO NAJNIZSZEJ CENIE
-//    public void setDrpSortBySortLowestPrice(){
-//        Select sortBy = new Select(drpSortBy);
-//        sortBy.selectByValue("price:asc");
-//    }
-
-
-

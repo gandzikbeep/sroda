@@ -29,7 +29,6 @@ public class US08EditAdressData {
         LoginPage loginPage = new LoginPage(driver);
         DataFakerPage faker = new DataFakerPage();
 
-        // dane testowe:
         String newFirstName = faker.getFakeFirstName();
         String newLastName = faker.getFakeLastName();
         String newCompany = faker.getFakeCompany();
@@ -46,7 +45,6 @@ public class US08EditAdressData {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
-        //TEST:
         loginPage.logIn(correctUsername, correctPassword);
         welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
@@ -55,7 +53,6 @@ public class US08EditAdressData {
                 newMobilePhone, newAddInfo, newAlias);
         myAddress_updatePage.setSaveBtn();
 
-        //ASERCJE:
         Assert.assertTrue(myAddressPage.checkWelcomeText().contains("Please configure your default billing and delivery addresses when placing an order. You may also add additional addresses, which can be useful for sending gifts or receiving an order at your office.")); // cos zmienic
         Assert.assertEquals("Name is incorrect", newFirstName, myAddressPage.getTextFromFirstName());
         Assert.assertEquals("message", newCity + ",", myAddressPage.setCity());

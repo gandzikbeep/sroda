@@ -7,20 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 
-    private final WebDriver driver;
-
     public HomePage(WebDriver driver) {
-        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//*[@id=\"header_logo\"]/a/img")
     WebElement yourLogo;
 
-    @FindBy(xpath = "//*[@id=\"contact-link\"]/a")
-    WebElement contactLink;
-
-    @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
+    @FindBy(xpath = "//*[@class='login']")
+    //(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
     WebElement signIn;
 
     @FindBy(xpath = "//*[@id=\"home-page-tabs\"]/li[1]/a")
@@ -41,11 +36,6 @@ public class HomePage {
     public void setSearchBox(String searchItem) {
         searchBox.sendKeys(searchItem);
         searchBoxFind.click();
-    }
-
-
-    public void setContactLink() {
-        contactLink.click();
     }
 
     public boolean checkLogo() {

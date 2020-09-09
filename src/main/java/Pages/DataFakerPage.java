@@ -1,19 +1,18 @@
 package Pages;
 
-import com.github.javafaker.Company;
 import com.github.javafaker.Faker;
 
 import java.util.Locale;
 
 public class DataFakerPage {
-    private Faker faker;
+    private final Faker faker;
 
     public DataFakerPage() {
         faker = new Faker(new Locale("en-US"));
     }
 
     public String getFakeFirstName() {
-                return faker.name().firstName();
+        return faker.name().firstName();
     }
 
     public String getFakeLastName() {

@@ -16,19 +16,11 @@ public class Pay05PaymentBankWireCompletePage {
         PageFactory.initElements(driver, this);
     }
 
-
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/p")
     WebElement completeOrderSection;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/p/a")
-    WebElement backToOrdersBtn;
-
     public boolean isVisibleCompleteOrderSection() {
         return completeOrderSection.isDisplayed();
-    }
-
-    public void setBackToOrdersBtn() {
-        backToOrdersBtn.click();
     }
 }
 

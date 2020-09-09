@@ -29,8 +29,6 @@ public class ContactUsPage {
     @FindBy(xpath = "//*[@id=\"submitMessage\"]")
     WebElement sendBtn;
 
-
-
     public void setSubject(String setSubject) {
         Select drpSubject = new Select(subjectHeading);
         drpSubject.selectByValue(setSubject);

@@ -30,7 +30,6 @@ public class US02CorrectRegisterUserTest {
         LoginPage loginPage = new LoginPage(driver);
         CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
 
-        String email = faker.getFakeEmail();
         String correctDay = "4";
         String correctMonth = "4";
         String correctYear = "1990";
@@ -49,7 +48,7 @@ public class US02CorrectRegisterUserTest {
         String alias = "jakisAlias";
 
         homePage.setSignInButton();
-        loginPage.createAnAccount(email);
+        loginPage.createAnAccount(faker.getFakeEmail());
         createAccountFormPage.setGender(false);
         createAccountFormPage.createAnAccountFillForm(correctDay, correctMonth, correctYear, firstName, lastName, password,
                 correctAddress1, correctAddress2, city, state, country, zipcode, addInfo, homePhone, mobilePhone, alias);

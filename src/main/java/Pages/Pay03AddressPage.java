@@ -20,7 +20,3 @@ public class Pay03AddressPage {
         proceedToCheckoutBtn.click();
     }
 }
-
-
-
-

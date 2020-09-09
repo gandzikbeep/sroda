@@ -17,7 +17,6 @@ public class US04CheckElementsOnHomePage {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         driver.get("http://automationpractice.com/index.php");
-
     }
 
     @Test
@@ -44,9 +43,10 @@ public class US04CheckElementsOnHomePage {
     }
 
     @Test
-    public void checkSliderContener() {
+    public void checkSliderContainer() {
 
         HomePage homePage = new HomePage(driver);
+
         homePage.checkSliderContainer();
 
         Assert.assertTrue(homePage.checkSliderContainer());
@@ -56,5 +56,4 @@ public class US04CheckElementsOnHomePage {
     public void endTest() {
         driver.quit();
     }
-
 }

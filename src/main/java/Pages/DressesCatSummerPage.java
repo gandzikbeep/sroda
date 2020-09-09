@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import java.awt.*;
 
 public class DressesCatSummerPage {    // DO USUNIĘCIA
-    public Label priceSecondDress;
     WebDriver driver;
 
     public DressesCatSummerPage(WebDriver driver) {
@@ -26,7 +25,7 @@ public class DressesCatSummerPage {    // DO USUNIĘCIA
     WebElement popup_successAddToCart;
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")
-    WebElement proceedTocheckoutOnPopup;
+    WebElement proceedToCheckoutOnPopup;
 
     public void setSecondDress() {
         selectSecondDress.click();
@@ -36,8 +35,8 @@ public class DressesCatSummerPage {    // DO USUNIĘCIA
         addToCart_secondDress.click();
     }
 
-    public void setProceedTocheckoutOnPopup() {
-        proceedTocheckoutOnPopup.click();
+    public void setProceedToCheckoutOnPopup() {
+        proceedToCheckoutOnPopup.click();
     }
 }
 

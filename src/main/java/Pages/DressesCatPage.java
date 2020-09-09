@@ -34,7 +34,3 @@ public class DressesCatPage {
         summerDresses.click();
     }
 }
-
-
-
-

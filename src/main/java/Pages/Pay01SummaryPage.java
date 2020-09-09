@@ -12,14 +12,11 @@ public class Pay01SummaryPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath ="//*[@id='center_column']/p[2]/a[1]/span")
+
+    @FindBy(xpath = "//*[@id='center_column']/p[2]/a[1]/span")
     WebElement proceedToCheckoutBtn;
 
-    public void setProceedToCheckoutBtn(){
+    public void setProceedToCheckoutBtn() {
         proceedToCheckoutBtn.click();
     }
 }
-
-
-
-
