@@ -1,9 +1,9 @@
 //NIE DZIAŁA
 
 
-import Pages.HomePage;
-import Pages.LoginPage;
-import Pages.WelcomePage;
+import Pages.Pages.HomePage;
+import Pages.Pages.LoginPage;
+import Pages.Pages.WelcomePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

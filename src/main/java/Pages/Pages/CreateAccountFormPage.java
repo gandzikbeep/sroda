@@ -1,4 +1,4 @@
-package Pages;
+package Pages.Pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

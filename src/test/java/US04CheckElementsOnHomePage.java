@@ -1,4 +1,4 @@
-import Pages.HomePage;
+import Pages.Pages.HomePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

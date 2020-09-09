@@ -1,4 +1,4 @@
-package Pages;
+package Pages.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +16,6 @@ public class ContactUsAfterSendMsgPage {
     @FindBy(xpath = "//*[contains(text(),'Your message has been successfully sent to our team.')]")
     WebElement alertSuccessText;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a")
-    WebElement homeBtn;
-
     @FindBy(xpath = "//*[@id=\"center_column\"]")
     WebElement alertSuccessSection;
 
@@ -30,7 +27,4 @@ public class ContactUsAfterSendMsgPage {
         return alertSuccessSection.isDisplayed();
     }
 
-    public void getHomeBtn() {
-        homeBtn.click();
-    }
 }

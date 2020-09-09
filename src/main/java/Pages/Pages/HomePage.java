@@ -1,4 +1,4 @@
-package Pages;
+package Pages.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,6 @@ public class HomePage {
     WebElement yourLogo;
 
     @FindBy(xpath = "//*[@class='login']")
-    //(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
     WebElement signIn;
 
     @FindBy(xpath = "//*[@id=\"home-page-tabs\"]/li[1]/a")
@@ -27,13 +26,19 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"slider_row\"]")
     WebElement sliderContainer;
 
-    @FindBy(xpath = "//*[@id=\"search_query_top\"]")
+    @FindBy(xpath = "//*[@id='search_query_top']")
+            //       //*[@id='search_query_top']
     WebElement searchBox;
 
     @FindBy(xpath = "//*[@id=\"searchbox\"]/button")
     WebElement searchBoxFind;
 
-    public void setSearchBox(String searchItem) {
+    ////*[@id="search_query_top"]//*[@name='search_query']
+          //*[@name='search_query']//*[@id='searchbox']
+
+    // dobra   //*[@id="search_query_top"]
+
+    public void searchProductSearchBox(String searchItem) {
         searchBox.sendKeys(searchItem);
         searchBoxFind.click();
     }

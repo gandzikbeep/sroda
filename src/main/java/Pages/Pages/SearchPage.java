@@ -1,4 +1,4 @@
-package Pages;
+package Pages.Pages;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +26,22 @@ public class SearchPage {
     @FindBy(xpath = "//*[@id=\"center_column\"]/p")
     WebElement alertWarning;
 
+
+    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[1]/div/div[2]")
+    WebElement firstProductOnWebsite;
+
+    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/div[2]/a[2]")
+    WebElement moreBtn;
+
+
+
+    public void setFirstProductOnWebsite(){
+        firstProductOnWebsite.click();
+        moreBtn.click();
+           }
+
+
+
     public void setDrpSortBy(String valueSortOf) {
         Select sortBy = new Select(drpSortBy);
         sortBy.selectByValue(valueSortOf);
@@ -46,4 +62,6 @@ public class SearchPage {
     public String getTextFromAlert(String searchItem) {
         return alertWarning.getText();
     }
+
+
 }

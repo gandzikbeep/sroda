@@ -1,5 +1,5 @@
-import Pages.*;
-import Pages.SearchPage;
+import Pages.Pages.HomePage;
+import Pages.Pages.SearchPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -29,7 +29,7 @@ public class US010SearchBox {
         String searchItem = "dress";
         String valueSortOf = "price:asc";
 
-        homePage.setSearchBox(searchItem);
+        homePage.searchProductSearchBox(searchItem);
         searchPage.setDrpSortBy(valueSortOf);
         searchPage.qtyItems();
 
@@ -55,7 +55,7 @@ public class US010SearchBox {
 
         String searchItem = "dress";
 
-        homePage.setSearchBox(searchItem);
+        homePage.searchProductSearchBox(searchItem);
         searchPage.isQtyItemsIsVisible();
 
         Assert.assertTrue("mess", searchPage.isQtyItemsIsVisible());
@@ -69,7 +69,7 @@ public class US010SearchBox {
 
         String searchItem = "fakbge";
 
-        homePage.setSearchBox(searchItem);
+        homePage.searchProductSearchBox(searchItem);
         searchPage.isAlertMsgIsVisible();
 
         Assert.assertTrue(searchPage.isAlertMsgIsVisible());

@@ -1,4 +1,4 @@
-import Pages.*;
+import Pages.Pages.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US07LoggedUser_AddDressToChart {
+public class US07LoggedUser_AddDressToCart {
     WebDriver driver;
 
     @Before
@@ -43,7 +43,7 @@ public class US07LoggedUser_AddDressToChart {
         womenTabPage.setDressesSubCat();
         dresses_catPage.setSummerDresses();
         dresses_cat_summerPage.setSecondDress();
-        dresses_cat_summerPage.setSecondDressAddToChart();
+        dresses_cat_summerPage.setSecondDressAddToCart();
         dresses_cat_summerPage.setProceedToCheckoutOnPopup();
         pay01_summaryPage.setProceedToCheckoutBtn();
         pay03_addressPage.setProceedToCheckoutBtn();

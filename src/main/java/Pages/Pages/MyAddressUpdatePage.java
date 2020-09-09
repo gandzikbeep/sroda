@@ -1,4 +1,4 @@
-package Pages;
+package Pages.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -98,6 +98,8 @@ public class MyAddressUpdatePage {
         backBtn.click();
     }
 }
+
+//Zmiana na stronie - sparwdzenie GITA
 
 //----------//zrobienie jednej metody z wielu//-------------------------------------------------------//
 //    public void setFirstName(String newFirstName) {
