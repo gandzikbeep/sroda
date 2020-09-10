@@ -2,6 +2,7 @@ package Pages.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -50,12 +51,27 @@ public class ProductPage {
     @FindBy(xpath = "//*[@title='Proceed to checkout']")
     WebElement proceedToCheckoutBtn;
 
+    @FindBy(xpath = "//*[@id=\"color_to_pick_list\"]")
+    WebElement colors;
+
+    @FindBy(xpath = "//*[@id=\"color_11\"]")
+    WebElement blackColor;
+
+    public void getColorName(String color) {
+        colors.getText();
+    }
+
+    public void selectBlackColor(String color){
+        blackColor.click();
+    }
+
+
     public String getQtyFromQtyField() {
         return qtyField.getText();
     }
 
     public String setProductTitle() {
-        return productTitle.getText();
+        return productTitle.getText().toLowerCase();
     }
 
     public void setProductPhoto() throws InterruptedException {
@@ -63,6 +79,7 @@ public class ProductPage {
         Thread.sleep(2000);
         closeBtnOnPopup.click();
     }
+
 
     public void checkPriceForOneProduct() {
         priceForOneProduct.getText();
@@ -86,10 +103,6 @@ public class ProductPage {
         select.selectByValue(size);
     }
 
-//    public void setColor(String color) {
-//        Select selectColor = new Select(setColor);
-//        selectColor.selectByVisibleText(color);
-//    }
 
     public void setAddToCart() {
         addToCart.click();

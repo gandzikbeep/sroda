@@ -1,5 +1,4 @@
 import Pages.Pages.HomePage;
-import Pages.Pages.Pay01SummaryPage;
 import Pages.Pages.ProductPage;
 import Pages.Pages.SearchPage;
 import org.junit.After;
@@ -32,26 +31,22 @@ public class US011SelectProductwithChangingQuantitySizeColor {
         ProductPage productPage = new ProductPage(driver);
         HomePage homePage = new HomePage(driver);
         SearchPage searchPage = new SearchPage(driver);
-       // Pay01SummaryPage pay01SummaryPage = new Pay01SummaryPage(driver);
 
         String size = "2";
         String color = "Black";
         String searchItem = "summer";
 
         homePage.searchProductSearchBox(searchItem);
-        Thread.sleep(4000);
         searchPage.setFirstProductOnWebsite();
-        Thread.sleep(4000);
         productPage.setSize(size);
         productPage.additionQty();
-//        productPage.setColor(color);
+        productPage.getColorName(color);
+        productPage.selectBlackColor(color);
         productPage.setProductPhoto();
-        Thread.sleep(3000);
         productPage.setProductTitle();
 
-       // Assert.assertTrue(productPage.setProductTitle().contains(searchItem));
+        Assert.assertTrue(productPage.setProductTitle().contains(searchItem));
         Assert.assertTrue("nie widac buttona add to cart", productPage.addToCartIsVisible());
-
 
     }
 
