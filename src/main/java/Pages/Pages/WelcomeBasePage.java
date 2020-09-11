@@ -7,9 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class WelcomeBasePage extends BasePage {
 
-
-
-
     @FindBy(xpath = "//*[contains(text(),'Welcome to your account. Here you can manage all of your personal information and orders.')]")
     WebElement welcomeText;
 

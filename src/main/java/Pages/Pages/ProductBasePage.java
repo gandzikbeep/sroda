@@ -107,7 +107,7 @@ public class ProductBasePage extends BasePage {
         minusQty.click();
     }
 
-    public void additionQty() {
+    public void additionQty(int numberAddItem) {
         plusQty.click();
     }
 

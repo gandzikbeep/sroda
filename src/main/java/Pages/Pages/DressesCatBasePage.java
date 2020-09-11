@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class DressesCatBasePage extends BasePage {
 
-
     @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[1]/div[1]/a/img")
     WebElement casualDresses;
 

@@ -44,7 +44,7 @@ public class US02CorrectRegisterUserTest  {
         String city = faker.getFakeCity();
         String state = "32";
         String country = "21";
-        String zipcode = "10100";
+        String zipcode = "10107";
         String addInfo = "jakies info";
         String homePhone = faker.getFakeMobilePhone();
         String mobilePhone = faker.getFakeMobilePhone();

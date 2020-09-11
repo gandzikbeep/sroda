@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyAddressBasePage extends BasePage {
 
-
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/div/div/ul/li[2]/span[1]")
     WebElement firstName;
 

@@ -8,7 +8,7 @@ public class DataFakerPage {
     private final Faker faker;
 
     public DataFakerPage() {
-        faker = new Faker(new Locale("en-US"));
+        faker = new Faker(new Locale("US"));
     }
 
     public String getFakeFirstName() {

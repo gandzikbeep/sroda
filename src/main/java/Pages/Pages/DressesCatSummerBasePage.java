@@ -8,11 +8,8 @@ import org.openqa.selenium.support.FindBy;
 public class DressesCatSummerBasePage extends BasePage {
 
 
-
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]")
     WebElement selectSecondDress;
-
-
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span")
     WebElement addToCart_secondDress;

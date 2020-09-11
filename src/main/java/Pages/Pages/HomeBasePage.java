@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomeBasePage extends BasePage {
 
-
     @FindBy(xpath = "//*[@id=\"header_logo\"]/a/img")
     WebElement yourLogo;
 
@@ -24,7 +23,6 @@ public class HomeBasePage extends BasePage {
     WebElement sliderContainer;
 
     @FindBy(xpath = "//*[@id='search_query_top']")
-    //       //*[@id='search_query_top']
     WebElement searchBox;
 
     @FindBy(xpath = "//*[@id=\"searchbox\"]/button")

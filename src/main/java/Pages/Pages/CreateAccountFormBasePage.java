@@ -13,7 +13,6 @@ public class CreateAccountFormBasePage extends BasePage {
     WebDriver driver;
 
 
-
     @FindBy(id = "id_gender1")
     WebElement rdbGenderMale;
 
@@ -97,20 +96,17 @@ public class CreateAccountFormBasePage extends BasePage {
                                         String lastName, String password, String correctAddress1, String correctAddress2,
                                         String city, String state, String country, String zipcode, String addInfo,
                                         String homePhone, String mobilePhone, String alias) {
-       // JavascriptExecutor js = (JavascriptExecutor) driver;
 
         this.firstName.sendKeys(firstName);
         this.lastName.sendKeys(lastName);
         emailInput.click();
         createPassword.sendKeys(password);
-       // js.executeScript(("window.scrollBy(0,200)"));
         Select daysSelect = new Select(drpDateOfBirthDays);
         daysSelect.selectByValue(correctDay);
         Select monthSelect = new Select(drpDateOfBirthMonths);
         monthSelect.selectByValue(correctMonth);
         Select yearSelect = new Select(drpDateOfBirthYears);
         yearSelect.selectByValue(correctYear);
-       // js.executeScript(("window.scrollBy(0,300)"));
         checkboxNews.click();
         checkBoxSpecialOffers.click();
         address1.sendKeys(correctAddress1);

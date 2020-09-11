@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ContactUsBasePage extends BasePage {
 
-
     @FindBy(xpath = "//*[@id=\"id_contact\"]")
     WebElement subjectHeading;
 

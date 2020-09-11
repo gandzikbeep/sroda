@@ -36,7 +36,8 @@ public class US011SelectProductWithChangingQuantitySizeColor {
         homePage.searchProductSearchBox(searchItem);
         searchPage.setFirstProductOnWebsite();
         productPage.setSize(size);
-        productPage.additionQty();
+        int numberAddItem= 1;
+        productPage.additionQty(numberAddItem);
         productPage.setProductPhoto();
         productPage.setProductTitle();
 
@@ -46,22 +47,24 @@ public class US011SelectProductWithChangingQuantitySizeColor {
     }
 //    @Test
 //    public void addQtyOfProduct() throws InterruptedException {
-//        ProductPage productPage = new ProductPage(driver);
-//        HomePage homePage = new HomePage(driver);
-//        SearchPage searchPage = new SearchPage(driver);
+//
+//        ProductBasePage productPage = new ProductBasePage(driver);
+//        HomeBasePage homePage = new HomeBasePage(driver);
+//        SearchBasePage searchPage = new SearchBasePage(driver);
 //
 //        String searchItem = "summer";
+//        int numberAddItem = 2;
 //
 //        homePage.searchProductSearchBox(searchItem);
 //        searchPage.setFirstProductOnWebsite();
-//        productPage.additionQty();
-//        productPage.additionQty();
-
-
-
-        //productPage.getQtyFromQtyField();
-        // add button to findby proceed to checkout
-
+//        productPage.additionQty(numberAddItem);
+//
+//
+//
+//
+//        productPage.getQtyFromQtyField();
+//        // add button to findby proceed to checkout
+//
 //        Assert.assertTrue(productPage.getQtyFromQtyField().contains("3"));
 //
 //    }

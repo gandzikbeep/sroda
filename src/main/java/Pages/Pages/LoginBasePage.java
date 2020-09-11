@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginBasePage extends BasePage {
 
-
-
     private DataFakerPage faker = new DataFakerPage();
 
     @FindBy(xpath = "//*[@id='email']")
