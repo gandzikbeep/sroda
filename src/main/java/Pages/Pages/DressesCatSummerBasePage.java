@@ -1,19 +1,13 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import java.awt.*;
+public class DressesCatSummerBasePage extends BasePage {
 
-public class DressesCatSummerPage {    // DO USUNIĘCIA
-    WebDriver driver;
 
-    public DressesCatSummerPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]")
     WebElement selectSecondDress;
@@ -28,6 +22,10 @@ public class DressesCatSummerPage {    // DO USUNIĘCIA
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")
     WebElement proceedToCheckoutOnPopup;
+
+    public DressesCatSummerBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void setSecondDress() {
         selectSecondDress.click();

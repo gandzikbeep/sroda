@@ -1,15 +1,12 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomeBasePage extends BasePage {
 
-    public HomePage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@id=\"header_logo\"]/a/img")
     WebElement yourLogo;
@@ -27,16 +24,15 @@ public class HomePage {
     WebElement sliderContainer;
 
     @FindBy(xpath = "//*[@id='search_query_top']")
-            //       //*[@id='search_query_top']
+    //       //*[@id='search_query_top']
     WebElement searchBox;
 
     @FindBy(xpath = "//*[@id=\"searchbox\"]/button")
     WebElement searchBoxFind;
 
-    ////*[@id="search_query_top"]//*[@name='search_query']
-          //*[@name='search_query']//*[@id='searchbox']
-
-    // dobra   //*[@id="search_query_top"]
+    public HomeBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void searchProductSearchBox(String searchItem) {
         searchBox.sendKeys(searchItem);
@@ -59,11 +55,14 @@ public class HomePage {
         return sliderContainer.isDisplayed();
     }
 
-    public boolean isSignInButtonIsVisible() {
-        return signIn.isDisplayed();
-    }
+//    public boolean isSignInButtonIsVisible() {
+//        return signIn.isDisplayed();
+//    }
 
     public void setSignInButton() {
         signIn.click();
     }
+
+
 }
+

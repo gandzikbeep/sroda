@@ -1,20 +1,18 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class Pay05PaymentPage {
-    WebDriver driver;
-
-    public Pay05PaymentPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+public class Pay05PaymentBasePage extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a")
     WebElement payByBankWire;
+
+    public Pay05PaymentBasePage(WebDriver driver) {
+        super(driver);
+    }
 
 //    @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p/a")
 //    WebElement payByCheck;

@@ -23,11 +23,11 @@ public class US09SendMsg {
     @Test
     public void sendMsgAsALoggedUser() {
 
-        HomePage homePage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
-        ContactUsPage contactUsPage = new ContactUsPage(driver);
-        ContactUsAfterSendMsgPage contactUs_afterSendMsgPage = new ContactUsAfterSendMsgPage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
+        ContactUsBasePage contactUsPage = new ContactUsBasePage(driver);
+        ContactUsAfterSendMsgBasePage contactUs_afterSendMsgPage = new ContactUsAfterSendMsgBasePage(driver);
 
         String email = "anna@test.pl";
         String password = "111111";

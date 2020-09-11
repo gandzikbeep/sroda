@@ -1,18 +1,13 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class MyAddressUpdatePage {
-    WebDriver driver;
+public class MyAddressUpdateBasePage extends BasePage {
 
-    public MyAddressUpdatePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@id=\"firstname\"]")
     WebElement firstName;
@@ -58,6 +53,10 @@ public class MyAddressUpdatePage {
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/a/span")
     WebElement backBtn;
+
+    public MyAddressUpdateBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void fillAllForm(String newFirstName, String newLastName, String newCompany, String newAddress1, String newAddress2,
                             String newCity, String newState, String newZipCode, String newCountry, String newHomePhone,

@@ -1,40 +1,42 @@
-import Pages.Config.BaseTest;
-import Pages.Pages.HomeBasePage;
+package Pages.Config;
+
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US03CheckLogoTest  {
-    WebDriver driver;
+public class BaseTest   {
 
+
+  public WebDriver driver;
 
 
     @Before
-    public void setup() {
+    public void setup()  {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
+      //  String baseUrl = "http://automationpractice.com/index.php";
+
+       WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+        driver.manage().window().maximize();
         driver.get("http://automationpractice.com/index.php");
-    }
-
-    @Test
-    public void checkLogo() {
-
-        HomeBasePage homePage = new HomeBasePage(driver);
-
-        homePage.checkLogo();
-
-        Assert.assertTrue(homePage.checkLogo());
 
     }
+
 
     @After
+
     public void endTest() {
+      WebDriver driver = new ChromeDriver();
         driver.quit();
     }
+
+//    public void quit() {
+//        if (null != driver) {
+//            driver.quit();
+//        }
+//        driver = null;
+//    }
 }

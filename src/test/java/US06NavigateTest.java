@@ -1,5 +1,5 @@
-import Pages.Pages.LoginPage;
-import Pages.Pages.WelcomePage;
+import Pages.Pages.LoginBasePage;
+import Pages.Pages.WelcomeBasePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -27,8 +27,8 @@ public class US06NavigateTest {
     @Test
     public void testNavigateOrderHistoryTab() {
 
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
 
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
@@ -43,8 +43,8 @@ public class US06NavigateTest {
     @Test
     public void testNavigateCreditSlips() {
 
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
 
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
@@ -59,8 +59,8 @@ public class US06NavigateTest {
     @Test
     public void testNavigateToMyAddress() {
 
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
         String expectedURL = "http://automationpractice.com/index.php?controller=addresses";
@@ -73,8 +73,8 @@ public class US06NavigateTest {
 
     @Test
     public void testNavigateToMyPersonalInfo() {
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
 
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";
@@ -89,8 +89,8 @@ public class US06NavigateTest {
     @Test
     public void testNavigateToWishlist() {
 
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
 
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";

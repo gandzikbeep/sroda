@@ -1,21 +1,13 @@
 package Pages.Pages;
 
-import org.openqa.selenium.NoSuchElementException;
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage {
-    WebDriver driver;
+public class SearchBasePage extends BasePage {
 
-    public SearchPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@class='selectProductSort form-control']")
     WebElement drpSortBy;
@@ -33,11 +25,14 @@ public class SearchPage {
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/div[2]/a[2]")
     WebElement moreBtn;
 
+    public SearchBasePage(WebDriver driver) {
+        super(driver);
+    }
 
 
-    public void setFirstProductOnWebsite(){
+    public void setFirstProductOnWebsite()  {
         firstProductOnWebsite.click();
-        moreBtn.click();
+                moreBtn.click();
            }
 
 

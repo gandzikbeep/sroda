@@ -1,17 +1,12 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class DressesCatPage {
-    WebDriver driver;
+public class DressesCatBasePage extends BasePage {
 
-    public DressesCatPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[1]/div[1]/a/img")
     WebElement casualDresses;
@@ -21,6 +16,10 @@ public class DressesCatPage {
 
     @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[3]/div[1]/a/img")
     WebElement summerDresses;
+
+    public DressesCatBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void setCasualDresses() {
         casualDresses.click();

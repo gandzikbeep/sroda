@@ -1,9 +1,9 @@
 //NIE DZIAŁA
 
 
-import Pages.Pages.HomePage;
-import Pages.Pages.LoginPage;
-import Pages.Pages.WelcomePage;
+import Pages.Pages.HomeBasePage;
+import Pages.Pages.LoginBasePage;
+import Pages.Pages.WelcomeBasePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -29,9 +29,9 @@ public class US05CorrectLogout {
 
     public void correctLoginWithLogout() {
 
-        HomePage homePage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
 
         String correctUsername = "correctUsername@pl.pl";
         String correctPassword = "1234567";

@@ -1,21 +1,18 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class CreateAccountFormPage {
+public class CreateAccountFormBasePage extends BasePage {
 
     WebDriver driver;
 
-    public CreateAccountFormPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+
 
     @FindBy(id = "id_gender1")
     WebElement rdbGenderMale;
@@ -83,6 +80,10 @@ public class CreateAccountFormPage {
     @FindBy(id = "submitAccount")
     WebElement btnSubmitAccount;
 
+    public CreateAccountFormBasePage(WebDriver driver) {
+        super(driver);
+    }
+
 
     public void setGender(boolean isMale) {
         if (isMale) {
@@ -96,20 +97,20 @@ public class CreateAccountFormPage {
                                         String lastName, String password, String correctAddress1, String correctAddress2,
                                         String city, String state, String country, String zipcode, String addInfo,
                                         String homePhone, String mobilePhone, String alias) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+       // JavascriptExecutor js = (JavascriptExecutor) driver;
 
         this.firstName.sendKeys(firstName);
         this.lastName.sendKeys(lastName);
         emailInput.click();
         createPassword.sendKeys(password);
-        js.executeScript(("window.scrollBy(0,200)"));
+       // js.executeScript(("window.scrollBy(0,200)"));
         Select daysSelect = new Select(drpDateOfBirthDays);
         daysSelect.selectByValue(correctDay);
         Select monthSelect = new Select(drpDateOfBirthMonths);
         monthSelect.selectByValue(correctMonth);
         Select yearSelect = new Select(drpDateOfBirthYears);
         yearSelect.selectByValue(correctYear);
-        js.executeScript(("window.scrollBy(0,300)"));
+       // js.executeScript(("window.scrollBy(0,300)"));
         checkboxNews.click();
         checkBoxSpecialOffers.click();
         address1.sendKeys(correctAddress1);

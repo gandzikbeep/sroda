@@ -23,17 +23,17 @@ public class US07LoggedUser_AddDressToCart {
     @Test
     public void addDressToChartAndPayByWire() {
 
-        LoginPage loginPage = new LoginPage(driver);
-        WelcomePage welcomePage = new WelcomePage(driver);
-        WomenTabPage womenTabPage = new WomenTabPage(driver);
-        DressesCatPage dresses_catPage = new DressesCatPage(driver);
-        DressesCatSummerPage dresses_cat_summerPage = new DressesCatSummerPage(driver);
-        Pay01SummaryPage pay01_summaryPage = new Pay01SummaryPage(driver);
-        Pay03AddressPage pay03_addressPage = new Pay03AddressPage(driver);
-        Pay04ShippingPage pay04_shippingPage = new Pay04ShippingPage(driver);
-        Pay05PaymentPage pay05_paymentPage = new Pay05PaymentPage(driver);
-        Pay05PaymentBankWirePage pay05_payment_bankWirePage = new Pay05PaymentBankWirePage(driver);
-        Pay05PaymentBankWireCompletePage pay05_payment_bankWire_completePage = new Pay05PaymentBankWireCompletePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
+        WomenTabBasePage womenTabPage = new WomenTabBasePage(driver);
+        DressesCatBasePage dresses_catPage = new DressesCatBasePage(driver);
+        DressesCatSummerBasePage dresses_cat_summerPage = new DressesCatSummerBasePage(driver);
+        Pay01SummaryBasePage pay01_summaryPage = new Pay01SummaryBasePage(driver);
+        Pay03AddressBasePage pay03_addressPage = new Pay03AddressBasePage(driver);
+        Pay04ShippingBasePage pay04_shippingPage = new Pay04ShippingBasePage(driver);
+        Pay05PaymentBasePage pay05_paymentPage = new Pay05PaymentBasePage(driver);
+        Pay05PaymentBankWireBasePage pay05_payment_bankWirePage = new Pay05PaymentBankWireBasePage(driver);
+        Pay05PaymentBankWireCompleteBasePage pay05_payment_bankWire_completePage = new Pay05PaymentBankWireCompleteBasePage(driver);
 
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";

@@ -1,20 +1,19 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class Pay05PaymentBankWirePage {
-    WebDriver driver;
+public class Pay05PaymentBankWireBasePage extends BasePage {
 
-    public Pay05PaymentBankWirePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@id=\"cart_navigation\"]/button/span")
     WebElement confirmBtn;
+
+    public Pay05PaymentBankWireBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void setConfirmBtn() {
         confirmBtn.click();

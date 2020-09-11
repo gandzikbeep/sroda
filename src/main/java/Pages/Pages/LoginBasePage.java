@@ -1,17 +1,14 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
+import Pages.utilty.DataFakerPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage  {
-    WebDriver driver;
+public class LoginBasePage extends BasePage {
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+
 
     private DataFakerPage faker = new DataFakerPage();
 
@@ -29,6 +26,10 @@ public class LoginPage  {
 
     @FindBy(id = "SubmitLogin")
     WebElement setSignInButton;
+
+    public LoginBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void createAnAccount(String email) {
         emailCreateInput.sendKeys(faker.getFakeEmail());

@@ -1,4 +1,5 @@
 import Pages.Pages.*;
+import Pages.utilty.DataFakerPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,10 +24,10 @@ public class US08EditAdressData {
     @Test
     public void editAndSaveAddress() {
 
-        WelcomePage welcomePage = new WelcomePage(driver);
-        MyAddressPage myAddressPage = new MyAddressPage(driver);
-        MyAddressUpdatePage myAddress_updatePage = new MyAddressUpdatePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
+        MyAddressBasePage myAddressPage = new MyAddressBasePage(driver);
+        MyAddressUpdateBasePage myAddress_updatePage = new MyAddressUpdateBasePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
         DataFakerPage faker = new DataFakerPage();
 
         String newFirstName = faker.getFakeFirstName();
@@ -64,10 +65,10 @@ public class US08EditAdressData {
 
     public void editWithoutSaveAddress() {
 
-        WelcomePage welcomePage = new WelcomePage(driver);
-        MyAddressPage myAddressPage = new MyAddressPage(driver);
-        MyAddressUpdatePage myAddress_updatePage = new MyAddressUpdatePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
+        MyAddressBasePage myAddressPage = new MyAddressBasePage(driver);
+        MyAddressUpdateBasePage myAddress_updatePage = new MyAddressUpdateBasePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
         DataFakerPage faker = new DataFakerPage();
 
         String newFirstName = faker.getFakeFirstName();

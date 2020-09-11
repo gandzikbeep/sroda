@@ -1,20 +1,19 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class WomenTabPage {
-    WebDriver driver;
+public class WomenTabBasePage extends BasePage {
 
-    public WomenTabPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[2]/div[1]/a/img")
     WebElement dressesSubCat;
+
+    public WomenTabBasePage(WebDriver driver) {
+        super(driver);
+    }
 
 //    @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[1]/div[1]/a/img")
 //    WebElement topsSubCat;

@@ -1,4 +1,6 @@
+import Pages.Config.BaseTest;
 import Pages.Pages.*;
+import Pages.utilty.DataFakerPage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,26 +11,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US02CorrectRegisterUserTest {
+public class US02CorrectRegisterUserTest  {
+
     WebDriver driver;
+
 
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.manage().window().maximize();
         driver.get("http://automationpractice.com/index.php");
     }
 
     @Test
     public void correctRegister() {
 
-        HomePage homePage = new HomePage(driver);
+        HomeBasePage homeBasePage = new HomeBasePage(driver);
         DataFakerPage faker = new DataFakerPage();
-        WelcomePage welcomePage = new WelcomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
-        CreateAccountFormPage createAccountFormPage = new CreateAccountFormPage(driver);
+        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
+        LoginBasePage loginPage = new LoginBasePage(driver);
+        CreateAccountFormBasePage createAccountFormPage = new CreateAccountFormBasePage(driver);
 
         String correctDay = "4";
         String correctMonth = "4";
@@ -47,7 +50,7 @@ public class US02CorrectRegisterUserTest {
         String mobilePhone = faker.getFakeMobilePhone();
         String alias = "jakisAlias";
 
-        homePage.setSignInButton();
+        homeBasePage.setSignInButton();
         loginPage.createAnAccount(faker.getFakeEmail());
         createAccountFormPage.setGender(false);
         createAccountFormPage.createAnAccountFillForm(correctDay, correctMonth, correctYear, firstName, lastName, password,
@@ -57,7 +60,7 @@ public class US02CorrectRegisterUserTest {
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here "));
         Assert.assertTrue(welcomePage.isLoggedUserIsVisibleSection());
         Assert.assertTrue(welcomePage.isLogoutButtonVisible());
-        Assert.assertTrue(homePage.isSignInButtonIsVisible());
+       // Assert.assertTrue(homeBasePage.isSignInButtonIsVisible());
     }
 
     @After

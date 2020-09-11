@@ -1,17 +1,14 @@
 package Pages.Pages;
 
+import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class WelcomePage {
-    WebDriver driver;
+public class WelcomeBasePage extends BasePage {
 
-    public WelcomePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+
+
 
     @FindBy(xpath = "//*[contains(text(),'Welcome to your account. Here you can manage all of your personal information and orders.')]")
     WebElement welcomeText;
@@ -33,6 +30,10 @@ public class WelcomePage {
     String getMyAddressUrl = "http://automationpractice.com/index.php?controller=addresses";
     String getMyPersonalInfoUrl = "http://automationpractice.com/index.php?controller=identity";
     String getMyWishlistUrl = "http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist";
+
+    public WelcomeBasePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void getContactUs() {
         contactUs.click();

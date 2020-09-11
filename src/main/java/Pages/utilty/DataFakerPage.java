@@ -1,4 +1,4 @@
-package Pages.Pages;
+package Pages.utilty;
 
 import com.github.javafaker.Faker;
 
@@ -58,4 +58,7 @@ public class DataFakerPage {
     public String getFakeAddInfo() {
         return faker.cat().name();
     }
+
+
+
 }

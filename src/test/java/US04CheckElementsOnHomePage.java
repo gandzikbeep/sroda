@@ -1,4 +1,4 @@
-import Pages.Pages.HomePage;
+import Pages.Pages.HomeBasePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,7 +22,7 @@ public class US04CheckElementsOnHomePage {
     @Test
     public void checkElementPopular() {
 
-        HomePage homePage = new HomePage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
 
         homePage.checkElementPopular();
 
@@ -34,7 +34,7 @@ public class US04CheckElementsOnHomePage {
     @Test
     public void checkElementBestSeller() {
 
-        HomePage homePage = new HomePage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
 
         homePage.checkElementBestSellers();
 
@@ -45,7 +45,7 @@ public class US04CheckElementsOnHomePage {
     @Test
     public void checkSliderContainer() {
 
-        HomePage homePage = new HomePage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
 
         homePage.checkSliderContainer();
 

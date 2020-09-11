@@ -1,5 +1,5 @@
-import Pages.Pages.HomePage;
-import Pages.Pages.SearchPage;
+import Pages.Pages.HomeBasePage;
+import Pages.Pages.SearchBasePage;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,8 +23,8 @@ public class US010SearchBox {
 
     @Test                       //sortowanie od najnizszej ceny
     public void sortingBy() {
-        HomePage homePage = new HomePage(driver);
-        SearchPage searchPage = new SearchPage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
+        SearchBasePage searchPage = new SearchBasePage(driver);
 
         String searchItem = "dress";
         String valueSortOf = "price:asc";
@@ -50,8 +50,8 @@ public class US010SearchBox {
 
     @Test
     public void searchRealProduct() {
-        HomePage homePage = new HomePage(driver);
-        SearchPage searchPage = new SearchPage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
+        SearchBasePage searchPage = new SearchBasePage(driver);
 
         String searchItem = "dress";
 
@@ -64,8 +64,8 @@ public class US010SearchBox {
     @Test
     public void searchFakeProduct() {
 
-        HomePage homePage = new HomePage(driver);
-        SearchPage searchPage = new SearchPage(driver);
+        HomeBasePage homePage = new HomeBasePage(driver);
+        SearchBasePage searchPage = new SearchBasePage(driver);
 
         String searchItem = "fakbge";
 
