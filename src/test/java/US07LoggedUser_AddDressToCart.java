@@ -1,3 +1,5 @@
+import Pages.Config.BasePage;
+import Pages.Config.BaseTest;
 import Pages.Pages.*;
 import org.junit.After;
 import org.junit.Assert;
@@ -8,21 +10,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US07LoggedUser_AddDressToCart {
-    WebDriver driver;
+public class US07LoggedUser_AddDressToCart extends BaseTest {
 
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-    }
 
     @Test
     public void addDressToChartAndPayByWire() {
 
+        HomeBasePage homePage = new HomeBasePage(driver);
         LoginBasePage loginPage = new LoginBasePage(driver);
         WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
         WomenTabBasePage womenTabPage = new WomenTabBasePage(driver);
@@ -38,6 +32,7 @@ public class US07LoggedUser_AddDressToCart {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
+        homePage.setSignInButton();
         loginPage.logIn(correctUsername, correctPassword);
         welcomePage.goToWomenTab();
         womenTabPage.setDressesSubCat();
@@ -57,8 +52,4 @@ public class US07LoggedUser_AddDressToCart {
 
     }
 
-    @After
-    public void endTest() {
-        driver.quit();
-    }
 }

@@ -1,3 +1,4 @@
+import Pages.Config.BaseTest;
 import Pages.Pages.*;
 import Pages.utilty.DataFakerPage;
 import org.junit.After;
@@ -9,21 +10,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US08EditAdressData {
-    WebDriver driver;
-
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-    }
+public class US08EditAddressData extends BaseTest {
 
     @Test
     public void editAndSaveAddress() {
 
+        HomeBasePage homePage = new HomeBasePage(driver);
         WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
         MyAddressBasePage myAddressPage = new MyAddressBasePage(driver);
         MyAddressUpdateBasePage myAddress_updatePage = new MyAddressUpdateBasePage(driver);
@@ -46,6 +38,7 @@ public class US08EditAdressData {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
+        homePage.setSignInButton();
         loginPage.logIn(correctUsername, correctPassword);
         welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
@@ -65,6 +58,7 @@ public class US08EditAdressData {
 
     public void editWithoutSaveAddress() {
 
+        HomeBasePage homePage = new HomeBasePage(driver);
         WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
         MyAddressBasePage myAddressPage = new MyAddressBasePage(driver);
         MyAddressUpdateBasePage myAddress_updatePage = new MyAddressUpdateBasePage(driver);
@@ -87,6 +81,7 @@ public class US08EditAdressData {
         String correctUsername = "anna@test.pl";
         String correctPassword = "111111";
 
+        homePage.setSignInButton();
         loginPage.logIn(correctUsername, correctPassword);
         welcomePage.navigateWelcomePageToMyAddress();
         myAddressPage.setUpdateBtn();
@@ -99,8 +94,4 @@ public class US08EditAdressData {
         Assert.assertNotEquals("Last name is not the same", newLastName, myAddressPage.getTextFromLastName());
     }
 
-    @After
-    public void endTest() {
-        driver.quit();
-    }
 }

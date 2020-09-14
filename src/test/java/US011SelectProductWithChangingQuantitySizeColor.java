@@ -1,3 +1,4 @@
+import Pages.Config.BaseTest;
 import Pages.Pages.HomeBasePage;
 import Pages.Pages.ProductBasePage;
 import Pages.Pages.SearchBasePage;
@@ -10,18 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US011SelectProductWithChangingQuantitySizeColor {
-    WebDriver driver;
+public class US011SelectProductWithChangingQuantitySizeColor extends BaseTest {
 
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php?");
-
-    }
 
     @Test
     public void setQtySize()  {
@@ -85,10 +76,4 @@ public class US011SelectProductWithChangingQuantitySizeColor {
 
     //aser   getQtyFromQtyField
 
-
-
-    @After
-    public void endTest() {
-        driver.quit();
-    }
 }

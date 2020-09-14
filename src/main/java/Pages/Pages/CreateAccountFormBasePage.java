@@ -1,7 +1,6 @@
 package Pages.Pages;
 
 import Pages.Config.BasePage;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,8 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class CreateAccountFormBasePage extends BasePage {
-
-    WebDriver driver;
 
 
     @FindBy(id = "id_gender1")

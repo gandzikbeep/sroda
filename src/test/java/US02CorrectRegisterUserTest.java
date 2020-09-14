@@ -11,18 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US02CorrectRegisterUserTest  {
+public class US02CorrectRegisterUserTest extends BaseTest {
 
-    WebDriver driver;
-
-
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.get("http://automationpractice.com/index.php");
-    }
 
     @Test
     public void correctRegister() {
@@ -50,6 +40,7 @@ public class US02CorrectRegisterUserTest  {
         String mobilePhone = faker.getFakeMobilePhone();
         String alias = "jakisAlias";
 
+
         homeBasePage.setSignInButton();
         loginPage.createAnAccount(faker.getFakeEmail());
         createAccountFormPage.setGender(false);
@@ -60,11 +51,7 @@ public class US02CorrectRegisterUserTest  {
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here "));
         Assert.assertTrue(welcomePage.isLoggedUserIsVisibleSection());
         Assert.assertTrue(welcomePage.isLogoutButtonVisible());
-       // Assert.assertTrue(homeBasePage.isSignInButtonIsVisible());
-    }
+            }
 
-    @After
-    public void endTest() {
-        driver.quit();
-    }
+
 }

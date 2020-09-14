@@ -10,7 +10,7 @@ public class HomeBasePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"header_logo\"]/a/img")
     WebElement yourLogo;
 
-    @FindBy(xpath = "//*[@class='login']")
+    @FindBy(xpath = "//*[@title = 'Log in to your customer account']")
     WebElement signIn;
 
     @FindBy(xpath = "//*[@id=\"home-page-tabs\"]/li[1]/a")
@@ -53,9 +53,9 @@ public class HomeBasePage extends BasePage {
         return sliderContainer.isDisplayed();
     }
 
-//    public boolean isSignInButtonIsVisible() {
-//        return signIn.isDisplayed();
-//    }
+    public boolean isSignInButtonIsVisible() {
+        return signIn.isDisplayed();
+    }
 
     public void setSignInButton() {
         signIn.click();

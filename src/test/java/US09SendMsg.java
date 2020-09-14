@@ -1,3 +1,4 @@
+import Pages.Config.BaseTest;
 import Pages.Pages.*;
 import org.junit.After;
 import org.junit.Assert;
@@ -8,17 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US09SendMsg {
-    WebDriver driver;
+public class US09SendMsg extends BaseTest {
 
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php?");
-    }
 
     @Test
     public void sendMsgAsALoggedUser() {
@@ -50,8 +42,4 @@ public class US09SendMsg {
         Assert.assertTrue(contactUs_afterSendMsgPage.getAlertSuccessText().contains("Your"));
     }
 
-    @After
-    public void endTest() {
-        driver.quit();
-    }
 }

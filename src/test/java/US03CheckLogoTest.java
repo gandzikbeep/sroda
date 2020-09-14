@@ -9,18 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class US03CheckLogoTest  {
-    WebDriver driver;
+public class US03CheckLogoTest extends BaseTest {
 
-
-
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        driver.get("http://automationpractice.com/index.php");
-    }
 
     @Test
     public void checkLogo() {
@@ -33,8 +23,4 @@ public class US03CheckLogoTest  {
 
     }
 
-    @After
-    public void endTest() {
-        driver.quit();
-    }
 }
