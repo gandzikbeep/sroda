@@ -1,6 +1,7 @@
 package Pages.Pages;
 
 import Pages.Config.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -98,21 +99,23 @@ public class CreateAccountFormBasePage extends BasePage {
         this.lastName.sendKeys(lastName);
         emailInput.click();
         createPassword.sendKeys(password);
-        Select daysSelect = new Select(drpDateOfBirthDays);
-        daysSelect.selectByValue(correctDay);
-        Select monthSelect = new Select(drpDateOfBirthMonths);
-        monthSelect.selectByValue(correctMonth);
-        Select yearSelect = new Select(drpDateOfBirthYears);
-        yearSelect.selectByValue(correctYear);
+        selectDate(correctDay, correctMonth, correctYear);
+
+        // public void selectDate method:
+//        new Select(drpDateOfBirthDays).selectByValue(correctDay);
+//        new Select(drpDateOfBirthMonths).selectByValue(correctMonth);
+//        new Select(drpDateOfBirthYears).selectByValue(correctYear);
         checkboxNews.click();
         checkBoxSpecialOffers.click();
         address1.sendKeys(correctAddress1);
         address2.sendKeys(correctAddress2);
         this.city.sendKeys(city);
-        Select stateSelect = new Select(drpState);
-        stateSelect.selectByValue(state);
-        Select countrySelect = new Select(drpCountry);
-        countrySelect.selectByValue(country);
+        new Select(drpState).selectByValue(state);
+//   Dropdown
+//        Select countrySelect = new Select(drpCountry);
+//        countrySelect.selectByValue(country);
+        new Select(drpCountry).selectByValue(country);
+
         zipCode.sendKeys(zipcode);
         this.addInfo.sendKeys(addInfo);
         this.homePhone.sendKeys(homePhone);
@@ -121,6 +124,12 @@ public class CreateAccountFormBasePage extends BasePage {
         this.alias.sendKeys(alias);
         btnSubmitAccount.click();
     }
+    public void selectDate(String correctDay, String correctMonth, String correctYear){
+        new Select(drpDateOfBirthDays).selectByValue(correctDay);
+        new Select(drpDateOfBirthMonths).selectByValue(correctMonth);
+        new Select(drpDateOfBirthYears).selectByValue(correctYear);
+    }
+
 }
 
 

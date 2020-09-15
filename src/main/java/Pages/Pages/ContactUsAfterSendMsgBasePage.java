@@ -14,8 +14,12 @@ public class ContactUsAfterSendMsgBasePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"center_column\"]")
     WebElement alertSuccessSection;
 
-    public ContactUsAfterSendMsgBasePage(WebDriver driver) {
+    public  ContactUsAfterSendMsgBasePage(WebDriver driver) {
         super(driver);
+    }
+    public ContactUsAfterSendMsgBasePage ContactUsAfterSendMsgBasePage(){
+        ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage = new ContactUsAfterSendMsgBasePage(driver);
+        return ContactUsAfterSendMsgBasePage();
     }
 
     public String getAlertSuccessText() {

@@ -5,10 +5,16 @@ import Pages.utilty.DataFakerPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class LoginBasePage extends BasePage {
 
-    private DataFakerPage faker = new DataFakerPage();
+    public LoginBasePage(WebDriver driver) {
+        super(driver);
+    }
+
+    private final DataFakerPage faker = new DataFakerPage();
 
     @FindBy(xpath = "//*[@id='email']")
     WebElement emailInput;
@@ -25,19 +31,18 @@ public class LoginBasePage extends BasePage {
     @FindBy(id = "SubmitLogin")
     WebElement setSignInButton;
 
-    public LoginBasePage(WebDriver driver) {
-        super(driver);
-    }
 
-    public void createAnAccount(String email) {
+    public LoginBasePage createAnAccount(String email) {
         emailCreateInput.sendKeys(faker.getFakeEmail());
         submitCreateBtn.click();
+        return this;
     }
 
-    public void logIn(String correctUsername, String correctPassword) {
+    public LoginBasePage logIn(String correctUsername, String correctPassword) {
         emailInput.sendKeys(correctUsername);
         passwordInput.sendKeys(correctPassword);
         setSignInButton.click();
+        return this;
     }
 
     public boolean IsSignInButtonIsVisibleOnLoginPage() {

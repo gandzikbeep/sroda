@@ -30,6 +30,10 @@ public class HomeBasePage extends BasePage {
 
     public HomeBasePage(WebDriver driver) {
         super(driver);
+           }
+
+    public void setSignInButton() {
+        signIn.click();
     }
 
     public void searchProductSearchBox(String searchItem) {
@@ -57,9 +61,7 @@ public class HomeBasePage extends BasePage {
         return signIn.isDisplayed();
     }
 
-    public void setSignInButton() {
-        signIn.click();
-    }
+
 
 
 }

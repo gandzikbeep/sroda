@@ -27,26 +27,36 @@ public class ContactUsBasePage extends BasePage {
         super(driver);
     }
 
-    public void setSubject(String setSubject) {
+    public ContactUsBasePage contactUsBasePage(){
+        ContactUsBasePage contactUsBasePage = new ContactUsBasePage(driver);
+        return contactUsBasePage;
+    }
+
+    public ContactUsBasePage setSubject(String setSubject) {
         Select drpSubject = new Select(subjectHeading);
         drpSubject.selectByValue(setSubject);
+        return this;
     }
 
-    public void setEmailAddress() {
+    public ContactUsBasePage setEmailAddress() {
         email.click();
+        return this;
     }
 
-    public void setOrderRef(String orderRefValue) {
+    public ContactUsBasePage setOrderRef(String orderRefValue) {
         Select drpOrderRef = new Select(orderRef);
         drpOrderRef.selectByValue(orderRefValue);
+        return this;
     }
 
-    public void setMsgText(String textMsg) {
+    public ContactUsBasePage setMsgText(String textMsg) {
         msgText.sendKeys(textMsg);
+        return this;
     }
 
     public void setSendBtn() {
         sendBtn.click();
+
     }
 }
 

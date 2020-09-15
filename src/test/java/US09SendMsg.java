@@ -1,13 +1,7 @@
 import Pages.Config.BaseTest;
 import Pages.Pages.*;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class US09SendMsg extends BaseTest {
 
@@ -30,11 +24,18 @@ public class US09SendMsg extends BaseTest {
         homePage.setSignInButton();
         loginPage.logIn(email, password);
         welcomePage.getContactUs();
-        contactUsPage.setSubject(setSubject);
-        contactUsPage.setEmailAddress();
-        contactUsPage.setOrderRef(orderRefValue);
-        contactUsPage.setMsgText(textMsg);
-        contactUsPage.setSendBtn();
+        new ContactUsBasePage(driver)
+                .setSubject(setSubject)
+                .setEmailAddress()
+                .setOrderRef(orderRefValue)
+                .setMsgText(textMsg)
+                .setSendBtn();
+
+//        contactUsPage.setSubject(setSubject);
+//        contactUsPage.setEmailAddress();
+//        contactUsPage.setOrderRef(orderRefValue);
+//        contactUsPage.setMsgText(textMsg);
+//        contactUsPage.setSendBtn();
         contactUs_afterSendMsgPage.getAlertSuccessText();
         contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed();
 
