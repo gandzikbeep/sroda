@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 public class Pay05PaymentBankWireCompleteBasePage extends BasePage {
 
 
-
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/p")
     WebElement completeOrderSection;
 

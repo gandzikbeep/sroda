@@ -100,11 +100,6 @@ public class CreateAccountFormBasePage extends BasePage {
         emailInput.click();
         createPassword.sendKeys(password);
         selectDate(correctDay, correctMonth, correctYear);
-
-        // public void selectDate method:
-//        new Select(drpDateOfBirthDays).selectByValue(correctDay);
-//        new Select(drpDateOfBirthMonths).selectByValue(correctMonth);
-//        new Select(drpDateOfBirthYears).selectByValue(correctYear);
         checkboxNews.click();
         checkBoxSpecialOffers.click();
         address1.sendKeys(correctAddress1);

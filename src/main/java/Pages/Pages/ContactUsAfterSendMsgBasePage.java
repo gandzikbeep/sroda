@@ -17,9 +17,12 @@ public class ContactUsAfterSendMsgBasePage extends BasePage {
     public  ContactUsAfterSendMsgBasePage(WebDriver driver) {
         super(driver);
     }
-    public ContactUsAfterSendMsgBasePage ContactUsAfterSendMsgBasePage(){
-        ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage = new ContactUsAfterSendMsgBasePage(driver);
-        return ContactUsAfterSendMsgBasePage();
+//    public ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage(){
+//        ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage = new ContactUsAfterSendMsgBasePage(driver);
+//        return ContactUsAfterSendMsgBasePage();
+  //  }
+    public ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage(){
+        return new ContactUsAfterSendMsgBasePage(driver);
     }
 
     public String getAlertSuccessText() {

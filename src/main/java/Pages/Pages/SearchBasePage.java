@@ -30,12 +30,10 @@ public class SearchBasePage extends BasePage {
     }
 
 
-    public void setFirstProductOnWebsite()  {
+    public void setFirstProductOnWebsite() {
         firstProductOnWebsite.click();
-                moreBtn.click();
-           }
-
-
+        moreBtn.click();
+    }
 
     public void setDrpSortBy(String valueSortOf) {
         Select sortBy = new Select(drpSortBy);

@@ -15,14 +15,8 @@ public class WomenTabBasePage extends BasePage {
         super(driver);
     }
 
-//    @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[1]/div[1]/a/img")
-//    WebElement topsSubCat;
-
     public void setDressesSubCat() {
         dressesSubCat.click();
     }
 
-//    public void setTopsSubCat(){
-//        topsSubCat.click();
-//    }
 }

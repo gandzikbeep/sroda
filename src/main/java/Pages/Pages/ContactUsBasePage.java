@@ -27,10 +27,9 @@ public class ContactUsBasePage extends BasePage {
         super(driver);
     }
 
-    public ContactUsBasePage contactUsBasePage(){
-        ContactUsBasePage contactUsBasePage = new ContactUsBasePage(driver);
-        return contactUsBasePage;
-    }
+//    public ContactUsBasePage contactUsBasePage(){
+//        return new ContactUsBasePage(driver);
+//    }
 
     public ContactUsBasePage setSubject(String setSubject) {
         Select drpSubject = new Select(subjectHeading);

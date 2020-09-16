@@ -36,6 +36,7 @@ public class US09SendMsg extends BaseTest {
 //        contactUsPage.setOrderRef(orderRefValue);
 //        contactUsPage.setMsgText(textMsg);
 //        contactUsPage.setSendBtn();
+
         contactUs_afterSendMsgPage.getAlertSuccessText();
         contactUs_afterSendMsgPage.isAlertSuccessSectionIsDisplayed();
 

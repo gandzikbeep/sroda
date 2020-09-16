@@ -24,8 +24,6 @@ public class US05CorrectLogout extends BaseTest {
         String correctPassword = "1234567";
 
         homePage.setSignInButton();
-//        new LoginBasePage(driver)
-//                .logIn(correctUsername, correctPassword);
         loginPage.logIn(correctUsername, correctPassword);
 
         welcomePage.setLogout();

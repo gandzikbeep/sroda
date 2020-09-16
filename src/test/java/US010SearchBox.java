@@ -50,7 +50,7 @@ public class US010SearchBox extends BaseTest {
         homePage.searchProductSearchBox(searchItem);
         searchPage.isQtyItemsIsVisible();
 
-        Assert.assertTrue("mess", searchPage.isQtyItemsIsVisible());
+        Assert.assertTrue("Qty Items is not visible", searchPage.isQtyItemsIsVisible());
     }
 
     @Test

@@ -34,7 +34,7 @@ public class US02CorrectRegisterUserTest extends BaseTest {
         String city = faker.getFakeCity();
         String state = "32";
         String country = "21";
-        String zipcode = "10107";
+        String zipcode = "11223";
         String addInfo = "jakies info";
         String homePhone = faker.getFakeMobilePhone();
         String mobilePhone = faker.getFakeMobilePhone();
@@ -51,7 +51,6 @@ public class US02CorrectRegisterUserTest extends BaseTest {
         Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here "));
         Assert.assertTrue(welcomePage.isLoggedUserIsVisibleSection());
         Assert.assertTrue(welcomePage.isLogoutButtonVisible());
-            }
-
+    }
 
 }

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class Pay05PaymentBasePage extends BasePage {
 
+
     @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a")
     WebElement payByBankWire;
 
@@ -14,16 +15,10 @@ public class Pay05PaymentBasePage extends BasePage {
         super(driver);
     }
 
-//    @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p/a")
-//    WebElement payByCheck;
-
     public void setPayByBankWire() {
         payByBankWire.click();
     }
 
-//    public void setPayByCheck() {
-//        payByCheck.click();
-//    }
 }
 
 
