@@ -1,5 +1,6 @@
 package Pages.Config;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +14,9 @@ public class BaseTest {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
+       // System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
         String baseUrl = "http://automationpractice.com/index.php";
+        WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -31,4 +33,3 @@ public class BaseTest {
         driver = null;
     }
 }
-

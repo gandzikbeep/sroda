@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 public class US010SearchBox extends BaseTest {
 
 
+
+
     @Test                       //sortowanie od najnizszej ceny
     public void sortingBy() {
         HomeBasePage homePage = new HomeBasePage(driver);

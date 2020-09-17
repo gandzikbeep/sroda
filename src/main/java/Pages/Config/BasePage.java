@@ -8,7 +8,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BasePage {
+public class BasePage  {
 
     protected WebDriver driver;
     public final int timeOut = 10;

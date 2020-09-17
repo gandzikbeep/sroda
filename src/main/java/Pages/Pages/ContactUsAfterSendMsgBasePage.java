@@ -21,16 +21,17 @@ public class ContactUsAfterSendMsgBasePage extends BasePage {
 //        ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage = new ContactUsAfterSendMsgBasePage(driver);
 //        return ContactUsAfterSendMsgBasePage();
   //  }
-    public ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage(){
-        return new ContactUsAfterSendMsgBasePage(driver);
-    }
+//    public ContactUsAfterSendMsgBasePage contactUsAfterSendMsgBasePage(){
+//        return new ContactUsAfterSendMsgBasePage(driver);
+//    }
 
     public String getAlertSuccessText() {
-        return alertSuccessText.getText();
+       return   alertSuccessText.getText();
+
     }
 
     public boolean isAlertSuccessSectionIsDisplayed() {
         return alertSuccessSection.isDisplayed();
-    }
+             }
 
 }

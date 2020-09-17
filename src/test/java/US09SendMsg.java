@@ -12,7 +12,6 @@ public class US09SendMsg extends BaseTest {
         HomeBasePage homePage = new HomeBasePage(driver);
         LoginBasePage loginPage = new LoginBasePage(driver);
         WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
-        ContactUsBasePage contactUsPage = new ContactUsBasePage(driver);
         ContactUsAfterSendMsgBasePage contactUs_afterSendMsgPage = new ContactUsAfterSendMsgBasePage(driver);
 
         String email = "anna@test.pl";
@@ -30,6 +29,7 @@ public class US09SendMsg extends BaseTest {
                 .setOrderRef(orderRefValue)
                 .setMsgText(textMsg)
                 .setSendBtn();
+
 
 //        contactUsPage.setSubject(setSubject);
 //        contactUsPage.setEmailAddress();

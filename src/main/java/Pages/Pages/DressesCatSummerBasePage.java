@@ -7,6 +7,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class DressesCatSummerBasePage extends BasePage {
 
+    public DressesCatSummerBasePage(WebDriver driver) {
+        super(driver);
+    }
+
 
     @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]")
     WebElement selectSecondDress;
@@ -17,20 +21,21 @@ public class DressesCatSummerBasePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span")
     WebElement proceedToCheckoutOnPopup;
 
-    public DressesCatSummerBasePage(WebDriver driver) {
-        super(driver);
-    }
 
-    public void setSecondDress() {
+
+    public DressesCatSummerBasePage setSecondDress() {
         selectSecondDress.click();
+        return this;
     }
 
-    public void setSecondDressAddToCart() {
+    public DressesCatSummerBasePage setSecondDressAddToCart() {
         addToCart_secondDress.click();
+        return this;
     }
 
-    public void setProceedToCheckoutOnPopup() {
+    public DressesCatSummerBasePage setProceedToCheckoutOnPopup() {
         proceedToCheckoutOnPopup.click();
+        return this;
     }
 }
 

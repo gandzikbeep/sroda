@@ -4,6 +4,7 @@ import Pages.Pages.LoginBasePage;
 import Pages.Pages.WelcomeBasePage;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
 
 public class US01CorrectLoginTest extends BaseTest {
