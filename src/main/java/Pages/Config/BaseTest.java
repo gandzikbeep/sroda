@@ -14,7 +14,7 @@ public class BaseTest {
 
     @Before
     public void setup() {
-       // System.setProperty("webdriver.chrome.driver", "C:\\PLIKI\\sroda2608\\src\\test\\java\\chromedriver.exe");
+
         String baseUrl = "http://automationpractice.com/index.php";
         WebDriverManager.chromedriver().setup();
 

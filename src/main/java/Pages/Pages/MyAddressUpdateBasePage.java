@@ -1,5 +1,6 @@
 package Pages.Pages;
 
+import Models.method1;
 import Pages.Config.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -61,10 +62,13 @@ public class MyAddressUpdateBasePage extends BasePage {
     public void fillAllForm(String newFirstName, String newLastName, String newCompany, String newAddress1, String newAddress2,
                             String newCity, String newState, String newZipCode, String newCountry, String newHomePhone,
                             String newMobilePhone, String newAddInfo, String newAlias) {
-        firstName.clear();
-        firstName.sendKeys(newFirstName);
-        lastName.clear();
-        lastName.sendKeys(newLastName);
+       var m1 = new method1(firstName, lastName);
+       m1.fillPartFormNameCityPhone(newFirstName, newLastName);
+
+//        firstName.clear();
+//        firstName.sendKeys(newFirstName);
+//        lastName.clear();
+//        lastName.sendKeys(newLastName);
         company.clear();
         company.sendKeys(newCompany);
         address1.clear();

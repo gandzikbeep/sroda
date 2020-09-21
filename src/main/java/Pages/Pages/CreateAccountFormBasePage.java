@@ -1,5 +1,6 @@
 package Pages.Pages;
 
+import Models.method1;
 import Pages.Config.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -90,13 +91,15 @@ public class CreateAccountFormBasePage extends BasePage {
         }
     }
 
-    public void createAnAccountFillForm(String correctDay, String correctMonth, String correctYear, String firstName,
-                                        String lastName, String password, String correctAddress1, String correctAddress2,
+    public void createAnAccountFillForm(String correctDay, String correctMonth, String correctYear, String newFirstName,
+                                        String newLastName, String password, String correctAddress1, String correctAddress2,
                                         String city, String state, String country, String zipcode, String addInfo,
                                         String homePhone, String mobilePhone, String alias) {
+        var m1 = new method1(firstName, lastName);
+        m1.fillPartFormNameCityPhone(newFirstName, newLastName);
 
-        this.firstName.sendKeys(firstName);
-        this.lastName.sendKeys(lastName);
+//        this.firstName.sendKeys(firstName);
+//        this.lastName.sendKeys(lastName);
         emailInput.click();
         createPassword.sendKeys(password);
         selectDate(correctDay, correctMonth, correctYear);

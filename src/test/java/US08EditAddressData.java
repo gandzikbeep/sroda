@@ -1,14 +1,8 @@
 import Pages.Config.BaseTest;
 import Pages.Pages.*;
 import Pages.utilty.DataFakerPage;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
 
 public class US08EditAddressData extends BaseTest {
 
@@ -27,7 +21,7 @@ public class US08EditAddressData extends BaseTest {
         String newCompany = faker.getFakeCompany();
         String newAddress1 = faker.getFakeAddress();
         String newAddress2 = faker.getFakeNumber();
-        String newCity = faker.getFakeCity();
+        String newCity = "45454";
         String newZipCode = faker.getFakeZipCode();
         String newHomePhone = faker.getFakeHomeNumber();
         String newMobilePhone = faker.getFakeMobilePhone();
@@ -56,7 +50,7 @@ public class US08EditAddressData extends BaseTest {
 
     @Test
 
-    public void editWithoutSaveAddress() {
+    public void editWithoutSaveAddress()  {
 
         HomeBasePage homePage = new HomeBasePage(driver);
         WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
