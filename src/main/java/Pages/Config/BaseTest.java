@@ -1,5 +1,6 @@
 package Pages.Config;
 
+import Pages.utilty.DriveFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -15,12 +16,9 @@ public class BaseTest {
     @Before
     public void setup() {
 
+        System.out.println("Before test");
         String baseUrl = "http://automationpractice.com/index.php";
-        WebDriverManager.chromedriver().setup();
-
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+        driver = DriveFactory.getDriver();
         driver.get(baseUrl);
 
     }
