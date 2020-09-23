@@ -2,14 +2,9 @@ import Pages.Config.BaseTest;
 import Pages.Pages.HomeBasePage;
 import Pages.Pages.LoginBasePage;
 import Pages.Pages.WelcomeBasePage;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
 
 public class US06NavigateTest extends BaseTest {
 

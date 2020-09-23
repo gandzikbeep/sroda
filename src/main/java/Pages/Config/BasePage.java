@@ -22,6 +22,7 @@ public class BasePage  {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 5), this);
+
     }
 
     protected void click(WebElement webElement) {

@@ -17,6 +17,8 @@ public class BaseTest {
         driver = DriveFactory.getDriver();
         driver.get(baseUrl);
 
+
+
     }
 
     @After

@@ -8,6 +8,7 @@ import org.junit.Test;
 public class US02CorrectRegisterUserTest extends BaseTest {
 
 
+
     @Test
     public void correctRegister() {
 

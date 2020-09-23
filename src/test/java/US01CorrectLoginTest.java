@@ -10,6 +10,9 @@ import org.junit.Test;
 
 public class US01CorrectLoginTest extends BaseTest {
 
+    public US01CorrectLoginTest() {
+    }
+
 
     @Test
     public void correctLogin()   {
