@@ -1,15 +1,11 @@
-import Pages.Config.BasePage;
 import Pages.Config.BaseTest;
 import Pages.Pages.*;
-import org.junit.After;
+import Pages.utilty.MyRunner;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.runner.RunWith;
 
-import java.util.concurrent.TimeUnit;
-
+@RunWith(MyRunner.class)
 public class US07LoggedUser_AddDressToCart extends BaseTest {
 
 

@@ -1,6 +1,7 @@
 package Pages.Config;
 
 import Pages.Pages.*;
+import Pages.utilty.Screenshots;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;

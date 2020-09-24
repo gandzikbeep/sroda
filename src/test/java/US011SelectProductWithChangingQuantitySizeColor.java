@@ -2,8 +2,12 @@ import Pages.Config.BaseTest;
 import Pages.Pages.HomeBasePage;
 import Pages.Pages.ProductBasePage;
 import Pages.Pages.SearchBasePage;
+import Pages.utilty.MyRunner;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(MyRunner.class)
 
 public class US011SelectProductWithChangingQuantitySizeColor extends BaseTest {
 

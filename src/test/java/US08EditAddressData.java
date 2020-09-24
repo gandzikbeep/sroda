@@ -1,9 +1,13 @@
 import Pages.Config.BaseTest;
 import Pages.Pages.*;
 import Pages.utilty.DataFakerPage;
+import Pages.utilty.ExecutionListener;
+import Pages.utilty.MyRunner;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(MyRunner.class)
 public class US08EditAddressData extends BaseTest {
 
     @Test
@@ -21,8 +25,8 @@ public class US08EditAddressData extends BaseTest {
         String newCompany = faker.getFakeCompany();
         String newAddress1 = faker.getFakeAddress();
         String newAddress2 = faker.getFakeNumber();
-        String newCity = "45454";
-        String newZipCode = faker.getFakeZipCode();
+        String newCity = faker.getFakeCity();
+        String newZipCode = "45454";
         String newHomePhone = faker.getFakeHomeNumber();
         String newMobilePhone = faker.getFakeMobilePhone();
         String newAddInfo = faker.getFakeAddInfo();

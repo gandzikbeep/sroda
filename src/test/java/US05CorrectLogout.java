@@ -5,10 +5,12 @@ import Pages.Config.BaseTest;
 import Pages.Pages.HomeBasePage;
 import Pages.Pages.LoginBasePage;
 import Pages.Pages.WelcomeBasePage;
+import Pages.utilty.MyRunner;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
-
+@RunWith(MyRunner.class)
 public class US05CorrectLogout extends BaseTest {
 
 
