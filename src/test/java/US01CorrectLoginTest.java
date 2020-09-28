@@ -20,26 +20,24 @@ public class US01CorrectLoginTest extends BaseTest {
 
 
     @Test
-    public void correctLogin() throws IOException {
+    public void correctLogin()  {
 
-        HomeBasePage homePage = new HomeBasePage(driver);
-        LoginBasePage loginPage = new LoginBasePage(driver);
-        WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
-        //Screenshots screenshots = new Screenshots(driver);
+            HomeBasePage homePage = new HomeBasePage(driver);
+            LoginBasePage loginPage = new LoginBasePage(driver);
+            WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
+
+            String correctUsername = "correctUsername@pl.pl";
+            String correctPassword = "123456";
+
+            homePage.setSignInButton();
+
+            loginPage.logIn(correctUsername, correctPassword);
+
+            Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
+            Assert.assertTrue(welcomePage.isLoggedUserIsVisibleSection());
+            Assert.assertTrue(welcomePage.isLogoutButtonVisible());
 
 
-        String correctUsername = "correctUsername@pl.pl";
-        String correctPassword = "1234567";
-        Screenshots.takesScreenshot(driver);
-        homePage.setSignInButton();
-
-        loginPage.logIn(correctUsername, correctPassword);
-        //screenshots.takeScreenshot();
-
-
-        Assert.assertTrue(welcomePage.getWelcomeTxt().contains("Welcome to your account. Here you can manage all of your personal information and orders."));
-        Assert.assertTrue(welcomePage.isLoggedUserIsVisibleSection());
-        Assert.assertTrue(welcomePage.isLogoutButtonVisible());
     }
 
 }
