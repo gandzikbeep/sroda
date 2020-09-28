@@ -1,12 +1,9 @@
 import Pages.Config.BaseTest;
 import Pages.Pages.*;
 import Pages.utilty.DataFakerPage;
-import Pages.utilty.MyRunner;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-@RunWith(MyRunner.class)
 
 public class US02CorrectRegisterUserTest extends BaseTest {
 

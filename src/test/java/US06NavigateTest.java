@@ -2,14 +2,9 @@ import Pages.Config.BaseTest;
 import Pages.Pages.HomeBasePage;
 import Pages.Pages.LoginBasePage;
 import Pages.Pages.WelcomeBasePage;
-import Pages.utilty.MyRunner;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.Marker;
 
-@RunWith(MyRunner.class)
 
 public class US06NavigateTest extends BaseTest {
 
@@ -21,10 +16,12 @@ public class US06NavigateTest extends BaseTest {
         LoginBasePage loginPage = new LoginBasePage(driver);
         WelcomeBasePage welcomePage = new WelcomeBasePage(driver);
 
+        String correctUsername = "correctUsername@pl.pl";
+        String correctPassword = "1234567";
         String expectedURL = "http://automationpractice.com/index.php?controller=history";
 
         homePage.setSignInButton();
-        loginPage.logIn("correctUsername@pl.pl", "1234567");
+        loginPage.logIn(correctUsername, correctPassword);
         welcomePage.navigateWelcomePageToOrderHistory();
 
         Assert.assertEquals("URL is not correct", expectedURL, driver.getCurrentUrl());
@@ -103,5 +100,3 @@ public class US06NavigateTest extends BaseTest {
     }
 
 }
-
-

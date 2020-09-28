@@ -10,10 +10,17 @@ public class MyRunner  extends BlockJUnit4ClassRunner {
         super(testClass);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     @Override public void run(RunNotifier notifier){
         notifier.addListener(new ExecutionListener());
         notifier.fireTestRunStarted(getDescription());
         super.run(notifier);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 }
