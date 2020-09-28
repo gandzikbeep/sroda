@@ -51,9 +51,9 @@ public class DataFakerPage {
         return faker.phoneNumber().cellPhone();
     }
 
-    public String getFakeZipCode() {
-        return faker.address().zipCode();
-    }
+//    public String getFakeZipCode() {
+//        return faker.address().zipCode();
+//    }
 
     public String getFakeAddInfo() {
         return faker.cat().name();

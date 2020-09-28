@@ -1,6 +1,7 @@
 package Pages.Config;
 
 import Pages.Pages.*;
+import Pages.utilty.Screenshots;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,6 @@ public class BasePage  {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 5), this);
-
     }
 
     protected void click(WebElement webElement) {
@@ -40,7 +40,5 @@ public class BasePage  {
         wait.ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-
-
 
 }

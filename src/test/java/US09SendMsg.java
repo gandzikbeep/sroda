@@ -1,8 +1,11 @@
 import Pages.Config.BaseTest;
 import Pages.Pages.*;
+import Pages.utilty.MyRunner;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(MyRunner.class)
 public class US09SendMsg extends BaseTest {
 
 

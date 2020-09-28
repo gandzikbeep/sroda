@@ -1,5 +1,8 @@
 package Pages.utilty;
 
+import org.junit.rules.TestRule;
+import org.junit.runner.Description;
+import org.junit.runners.model.Statement;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -7,25 +10,23 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.LocalTime;
 
-public class Screenshots {
-    private WebDriver driver;
+public class Screenshots   {
 
     public Screenshots(WebDriver newDriver) {
-        this.driver = newDriver;
     }
 
-    public  void takeScreenshot()  {
-        try {
-            TakesScreenshot screenshoter = (TakesScreenshot) driver;
-            File screenshot = screenshoter.getScreenshotAs(OutputType.FILE);
-            Files.copy(screenshot.toPath(), Paths.get ("src/main/resources/test"+ LocalTime.now().getNano() +".png"));
+    public static void takesScreenshot(WebDriver driver) throws IOException{
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File screenshotFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File destinationFile = new File("src/main/resources/test" + LocalTime.now().getNano() + ".png");
+        Files.copy(screenshotFile.toPath(),destinationFile.toPath());
+    }
 
-        }
-        catch (IOException e) {
-            System.out.println("nie znaleziono pliku");
-        }
+//
+//    public void takesScreenshot() {
+//    }
+}
 
-}}
+
