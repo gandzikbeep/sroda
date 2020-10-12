@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ContactUsAfterSendMsgBasePage extends BasePage {
-    WebDriver driver;
+//    WebDriver driver;
 
     @FindBy(xpath = "//*[contains(text(),'Your message has been successfully sent to our team.')]")
     WebElement alertSuccessText;
